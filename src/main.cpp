@@ -1,116 +1,115 @@
-#include <SDL3/SDL.h>
-#include <include/core/SkCanvas.h>
-#include <include/core/SkGraphics.h>
-#include <include/core/SkImage.h>
-#include <include/core/SkSurface.h>
-#include <include/core/SkPaint.h>
-#include <include/core/SkPath.h>
+/*
+* Copyright 2017 Google Inc.
+*
+* Use of this source code is governed by a BSD-style license that can be
+* found in the LICENSE file.
+*/
+#include "HelloWorld.h"
+#include "include/core/SkCanvas.h"
+#include "include/core/SkColor.h"
+#include "include/core/SkFont.h"
+#include "include/core/SkFontTypes.h"
+#include "include/core/SkGraphics.h"
+#include "include/core/SkPaint.h"
+#include "include/core/SkPoint.h"
+#include "include/core/SkRect.h"
+#include "include/core/SkShader.h"
+#include "include/core/SkString.h"
+#include "include/core/SkSurface.h"
+#include "include/core/SkTileMode.h"
+#include "include/effects/SkGradientShader.h"
+#include "tools/window/DisplayParams.h"
+#include <string.h>
 
-#include <iostream>
-#include <include/core/SkData.h>
-#include <include/core/SkStream.h>
-#include <include/core/SkImageInfo.h>
-
-static SDL_Window *window = NULL;
-static SDL_Renderer *renderer = NULL;
-
-sk_sp<SkSurface> surface;
-SkCanvas* canvas;
-
-int oldWidth  = 1;
-int oldHeight = 1;
-
-static void render(SkCanvas* canvas)
-{
-    int width, height;
-    SDL_GetWindowSizeInPixels(window, &width, &height);
-    surface = SkSurfaces::Raster(SkImageInfo::MakeN32Premul(width, height));
-    canvas = surface->getCanvas();
-
-    // Clear the canvas with a white color
-    canvas->clear(SK_ColorWHITE);
-
-    // Create a paint object
-    SkPaint paint;
-    paint.setColor(SK_ColorBLUE);
-    paint.setStrokeWidth(5);
-    paint.setStyle(SkPaint::kStroke_Style);
-
-    // Draw a rectangle
-    canvas->drawRect(SkRect::MakeXYWH(10, 10, 10, 10), paint);
-
-    // Get the pixels from the Skia surface
-    SkPixmap pixmap;
-    surface->peekPixels(&pixmap);
-
-    // Update the SDL texture
-    SDL_Texture* texture = SDL_CreateTexture(renderer, SDL_PIXELFORMAT_RGBA8888, SDL_TEXTUREACCESS_STATIC, pixmap.width(), pixmap.height());
-    SDL_UpdateTexture(texture, nullptr, pixmap.addr(), pixmap.rowBytes());
-
-    // Clear the SDL renderer
-    SDL_RenderClear(renderer);
-
-    // Render the texture to the SDL renderer
-    SDL_RenderTexture(renderer, texture, nullptr, nullptr);
-
-    // Present the renderer
-    SDL_RenderPresent(renderer);
-
-    // Destroy the texture
-    SDL_DestroyTexture(texture);
+using namespace sk_app;
+using skwindow::DisplayParams;
+Application* Application::Create(int argc, char** argv, void* platformData) {
+    return new HelloWorld(argc, argv, platformData);
 }
+HelloWorld::HelloWorld(int argc, char** argv, void* platformData)
+        : fBackendType(Window::kRaster_BackendType),
+        fRotationAngle(0) {
+    SkGraphics::Init();
+    fWindow = Windows::CreateNativeWindow(platformData);
+    fWindow->setRequestedDisplayParams(DisplayParams());
+    // register callbacks
+    fWindow->pushLayer(this);
+    fWindow->attach(fBackendType);
+}
+HelloWorld::~HelloWorld() {
+    fWindow->detach();
+    delete fWindow;
+}
+void HelloWorld::updateTitle() {
+    if (!fWindow) {
+        return;
+    }
+    SkString title("Hello World ");
+    if (Window::kRaster_BackendType == fBackendType) {
+        title.append("Raster");
+    } else {
 
-bool SDLCALL eventcallback(void *userdata, SDL_Event *event)
-{            
-    switch (event->type)
+        title.append("Unknown GPU backend");
+    }
+    fWindow->setTitle(title.c_str());
+}
+void HelloWorld::onBackendCreated() {
+    this->updateTitle();
+    fWindow->show();
+    fWindow->inval();
+}
+void HelloWorld::onPaint(SkSurface* surface) {
+    auto canvas = surface->getCanvas();
+    // Clear background
+    canvas->clear(SK_ColorWHITE);
+    SkPaint paint;
+    paint.setColor(SK_ColorRED);
+    // Draw a rectangle with red paint
+    SkRect rect = SkRect::MakeXYWH(10, 10, 128, 128);
+    canvas->drawRect(rect, paint);
+    // Set up a linear gradient and draw a circle
     {
-        case SDL_EVENT_WINDOW_PIXEL_SIZE_CHANGED:
-            render(canvas);
-            break;
+        SkPoint linearPoints[] = { { 0, 0 }, { 300, 300 } };
+        SkColor linearColors[] = { SK_ColorGREEN, SK_ColorBLACK };
+        paint.setShader(SkGradientShader::MakeLinear(linearPoints, linearColors, nullptr, 2,
+                                                     SkTileMode::kMirror));
+        paint.setAntiAlias(true);
+        canvas->drawCircle(200, 200, 64, paint);
+        // Detach shader
+        paint.setShader(nullptr);
+    }
+    // Draw a message with a nice black paint
+    SkFont font;
+    font.setSubpixel(true);
+    font.setSize(20);
+    paint.setColor(SK_ColorBLACK);
+    canvas->save();
+    static const char message[] = "Hello World ";
+    // Translate and rotate
+    canvas->translate(300, 300);
+    fRotationAngle += 0.2f;
+    if (fRotationAngle > 360) {
+        fRotationAngle -= 360;
+    }
+    canvas->rotate(fRotationAngle);
+    // Draw the text
+    canvas->drawSimpleText(message, strlen(message), SkTextEncoding::kUTF8, 0, 0, font, paint);
+    canvas->restore();
+}
+void HelloWorld::onIdle() {
+    // Just re-paint continuously
+    fWindow->inval();
+}
+bool HelloWorld::onChar(SkUnichar c, skui::ModifierKey modifiers) {
+    if (' ' == c) {
+        if (Window::kRaster_BackendType == fBackendType) {
+            SkDebugf("No GPU backend configured\n");
+            return true;
+        } else {
+            fBackendType = Window::kRaster_BackendType;
+        }
+        fWindow->detach();
+        fWindow->attach(fBackendType);
     }
     return true;
-}
-
-int main(int argc, char* argv[]) {
-    // Initialize SDL
-    if (!SDL_Init(SDL_INIT_VIDEO)) {
-        return -1;
-    }
-
-    #define WINDOW_WIDTH 640
-    #define WINDOW_HEIGHT 480
-
-    if (!SDL_CreateWindowAndRenderer("fullapp", WINDOW_WIDTH, WINDOW_HEIGHT, SDL_WINDOW_RESIZABLE, &window, &renderer)) {
-        return -1;
-    }
-
-    SkGraphics::Init();
-
-    int width, height;
-    SDL_GetWindowSizeInPixels(window, &width, &height);
-    
-    surface = SkSurfaces::Raster(SkImageInfo::MakeN32Premul(width, height));
-    canvas = surface->getCanvas();
-
-    canvas->clear(SK_ColorWHITE); // This should work without segfault
-
-    SDL_AddEventWatch(eventcallback, nullptr);
-
-    // Main loop
-    bool running = true;
-    while (running) {
-        SDL_Event event;
-        while (SDL_PollEvent(&event)) {
-            if (event.type == SDL_EVENT_QUIT) {
-                running = false;
-            }
-        }
-        render(canvas);
-    }
-
-    // Cleanup
-    SDL_DestroyRenderer(renderer);
-    SDL_DestroyWindow(window);
-    SDL_Quit();
-    return 0;
 }

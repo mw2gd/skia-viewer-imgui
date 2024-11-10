@@ -5,12 +5,13 @@
 include(FetchContent)
 #======== Set Project Information ========
 cmake_minimum_required(VERSION 3.11)
-project(app)
+project(fullapp LANGUAGES C CXX OBJC)
+
 # Set C++ standard (C++17)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
-
+set(PLATLIBS ${PLATLIBS} "")
+set(OBJECTS ${OBJECTS} "")
 
 #======== DOWNLOAD ALL THE SUBMODULES ========
 find_package(Git QUIET)
@@ -40,43 +41,35 @@ file(GLOB_RECURSE SOURCES
     "${CMAKE_SOURCE_DIR}/src/*.c"
 )
 # Add your executable
-add_executable(app ${SOURCES})
-
-FetchContent_Declare(
-  zlib
-  URL https://zlib.net/zlib-1.3.1.tar.gz
-)
-FetchContent_MakeAvailable(zlib)
+add_executable(fullapp ${SOURCES})
 
 #======== INCLUDE HEADERS ========
-target_include_directories(app PRIVATE
+target_include_directories(fullapp PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/src
     ${CMAKE_CURRENT_SOURCE_DIR}/ext/skia/
-    /Users/mattw/repos/imgui/App/ext/sdl3/include/
 )
 
 #======== Platform Dependent Logic ========
-set(PLATLIBS ${PLATLIBS}
-"-framework QuartzCore"
-"-framework Cocoa"
-"-framework Metal"
-"-framework CoreFoundation"
-"-framework CoreGraphics"
-"-framework CoreText"
-"-framework CoreServices"
-"-framework IOKit"
-"-framework Foundation")
-#======== Link Directories ========
-target_link_directories(app PRIVATE  ${CMAKE_CURRENT_SOURCE_DIR}/ext/skia/out/Release/)
-target_link_directories(app PRIVATE  /Users/mattw/repos/imgui/App/ext/sdl3/build/)
+if(APPLE)
+    if(IOS)
+        include(cmake/ios.cmake)
+    else()
+        include(cmake/macos.cmake)
+    endif()
+endif()
 
-#======== Link Libraries ========
-target_link_libraries(app PRIVATE
-    libskia.a
-    libpng.a
-    libSDL3.dylib
+#======== Link Libraries And External Object Files ========
+target_link_libraries(fullapp PRIVATE
+    # Libraries
+    ${CMAKE_CURRENT_SOURCE_DIR}/ext/skia/out/Release/libskia.a
+    ${CMAKE_CURRENT_SOURCE_DIR}/ext/skia/out/Release/libskshaper.a
+    ${CMAKE_CURRENT_SOURCE_DIR}/ext/skia/out/Release/libimgui.a
+    ${CMAKE_CURRENT_SOURCE_DIR}/ext/skia/out/Release/libsvg.a
+    ${CMAKE_CURRENT_SOURCE_DIR}/ext/skia/out/Release/libskunicode_core.a
+    ${CMAKE_CURRENT_SOURCE_DIR}/ext/skia/out/Release/libskunicode_icu.a
+    ${CMAKE_CURRENT_SOURCE_DIR}/ext/skia/out/Release/libwindow.a
     ${PLATLIBS}
-)
-target_link_libraries(app PRIVATE zlibstatic)
 
-#======== Link External Source Files ========
+    # Object Files
+    ${OBJECTS}
+)
