@@ -1,0 +1,82 @@
+defines = -DNDEBUG -DSK_TRIVIAL_ABI=\[\[clang$:$:trivial_abi\]\] -DSK_GAMMA_APPLY_TO_A8 -DSK_ALLOW_STATIC_GLOBAL_INITIALIZERS=1 -DGPU_TEST_UTILS=1 -DSK_ENABLE_AVX512_OPTS -DSK_TYPEFACE_FACTORY_CORETEXT -DSK_FONTMGR_CORETEXT_AVAILABLE -DSK_GL -DSK_SUPPORT_PDF -DSK_CODEC_DECODES_JPEG -DSK_CODEC_DECODES_JPEG_GAINMAPS -DSK_XML -DSK_ENABLE_ANDROID_UTILS -DSK_HAS_HEIF_LIBRARY -DSK_CODEC_DECODES_ICO -DSK_CODEC_DECODES_PNG -DSK_CODEC_DECODES_RAW -DSK_CODEC_DECODES_WEBP -DSK_HAS_WUFFS_LIBRARY -DSK_CODEC_DECODES_GIF -DSK_CODEC_DECODES_BMP -DSK_CODEC_DECODES_WBMP -DSK_ENABLE_OPTIMIZE_SIZE -DSK_ENABLE_PRECOMPILE -DSK_ASSUME_GL=1 -DSK_GANESH -DSK_USE_PERFETTO -DSK_ENABLE_API_AVAILABLE
+framework_dirs =
+include_dirs = -I../ext/skia/modules/sksg/include -I../ext/skia
+cflags = -Wno-attributes -ffp-contract=off -fstrict-aliasing -fPIC -fvisibility=hidden -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -target x86_64-apple-macos10.15 -Oz -fno-PIE -fno-pie -g -gdwarf-4 -Wall -Wextra -Winit-self -Wpointer-arith -Wsign-compare -Wvla -Wno-deprecated-declarations -Wno-maybe-uninitialized -Wno-psabi -Wno-switch-default -Wno-unused-parameter -fcolor-diagnostics -Weverything -Wno-unknown-warning-option -Wno-weak-template-vtables -Wno-nonportable-include-path -Wno-nonportable-system-include-path -Wno-cast-align -Wno-conversion -Wno-disabled-macro-expansion -Wno-documentation -Wno-documentation-unknown-command -Wno-double-promotion -Wno-exit-time-destructors -Wno-float-equal -Wno-global-constructors -Wno-missing-prototypes -Wno-missing-variable-declarations -Wno-pedantic -Wno-reserved-id-macro -Wno-reserved-identifier -Wno-shift-sign-overflow -Wno-signed-enum-bitfield -Wno-switch-enum -Wno-thread-safety-negative -Wno-undef -Wno-unreachable-code-break -Wno-unreachable-code-return -Wno-unused-macros -Wno-unused-member-function -Wno-non-c-typedef-for-linkage -Wno-cast-function-type-strict -Wno-covered-switch-default -Wno-deprecated -Wno-missing-noreturn -Wno-old-style-cast -Wno-newline-eof -Wno-padded -Wno-return-std-move-in-c++11 -Wno-shadow-field-in-constructor -Wno-shadow-uncaptured-local -Wno-zero-as-null-pointer-constant -Wno-declaration-after-statement -Wno-unsafe-buffer-usage -Wno-range-loop-analysis -Wrange-loop-construct -Wdeprecated-anon-enum-enum-conversion -Wdeprecated-array-compare -Wdeprecated-attributes -Wdeprecated-comma-subscript -Wdeprecated-copy -Wdeprecated-copy-dtor -Wdeprecated-dynamic-exception-spec -Wdeprecated-enum-compare -Wdeprecated-enum-compare-conditional -Wdeprecated-enum-enum-conversion -Wdeprecated-enum-float-conversion -Wdeprecated-increment-bool -Wdeprecated-register -Wdeprecated-this-capture -Wdeprecated-volatile -Wdeprecated-writable-str -Wextra-semi
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti -Wnon-virtual-dtor -Wno-noexcept-type -Wno-abstract-vbase-init -Wno-weak-vtables -Wno-c++98-compat -Wno-c++98-compat-pedantic -Wno-undefined-func-template
+root_out_dir = .
+target_output_name = libsksg
+
+build obj/modules/sksg/src/libsksg.SkSGClipEffect.o: cxx ../ext/skia/modules/sksg/src/SkSGClipEffect.cpp || obj/minify_sksl.stamp
+  source_file_part = SkSGClipEffect.cpp
+  source_name_part = SkSGClipEffect
+build obj/modules/sksg/src/libsksg.SkSGColorFilter.o: cxx ../ext/skia/modules/sksg/src/SkSGColorFilter.cpp || obj/minify_sksl.stamp
+  source_file_part = SkSGColorFilter.cpp
+  source_name_part = SkSGColorFilter
+build obj/modules/sksg/src/libsksg.SkSGDraw.o: cxx ../ext/skia/modules/sksg/src/SkSGDraw.cpp || obj/minify_sksl.stamp
+  source_file_part = SkSGDraw.cpp
+  source_name_part = SkSGDraw
+build obj/modules/sksg/src/libsksg.SkSGEffectNode.o: cxx ../ext/skia/modules/sksg/src/SkSGEffectNode.cpp || obj/minify_sksl.stamp
+  source_file_part = SkSGEffectNode.cpp
+  source_name_part = SkSGEffectNode
+build obj/modules/sksg/src/libsksg.SkSGGeometryEffect.o: cxx ../ext/skia/modules/sksg/src/SkSGGeometryEffect.cpp || obj/minify_sksl.stamp
+  source_file_part = SkSGGeometryEffect.cpp
+  source_name_part = SkSGGeometryEffect
+build obj/modules/sksg/src/libsksg.SkSGGeometryNode.o: cxx ../ext/skia/modules/sksg/src/SkSGGeometryNode.cpp || obj/minify_sksl.stamp
+  source_file_part = SkSGGeometryNode.cpp
+  source_name_part = SkSGGeometryNode
+build obj/modules/sksg/src/libsksg.SkSGGradient.o: cxx ../ext/skia/modules/sksg/src/SkSGGradient.cpp || obj/minify_sksl.stamp
+  source_file_part = SkSGGradient.cpp
+  source_name_part = SkSGGradient
+build obj/modules/sksg/src/libsksg.SkSGGroup.o: cxx ../ext/skia/modules/sksg/src/SkSGGroup.cpp || obj/minify_sksl.stamp
+  source_file_part = SkSGGroup.cpp
+  source_name_part = SkSGGroup
+build obj/modules/sksg/src/libsksg.SkSGImage.o: cxx ../ext/skia/modules/sksg/src/SkSGImage.cpp || obj/minify_sksl.stamp
+  source_file_part = SkSGImage.cpp
+  source_name_part = SkSGImage
+build obj/modules/sksg/src/libsksg.SkSGInvalidationController.o: cxx ../ext/skia/modules/sksg/src/SkSGInvalidationController.cpp || obj/minify_sksl.stamp
+  source_file_part = SkSGInvalidationController.cpp
+  source_name_part = SkSGInvalidationController
+build obj/modules/sksg/src/libsksg.SkSGMaskEffect.o: cxx ../ext/skia/modules/sksg/src/SkSGMaskEffect.cpp || obj/minify_sksl.stamp
+  source_file_part = SkSGMaskEffect.cpp
+  source_name_part = SkSGMaskEffect
+build obj/modules/sksg/src/libsksg.SkSGMerge.o: cxx ../ext/skia/modules/sksg/src/SkSGMerge.cpp || obj/minify_sksl.stamp
+  source_file_part = SkSGMerge.cpp
+  source_name_part = SkSGMerge
+build obj/modules/sksg/src/libsksg.SkSGNode.o: cxx ../ext/skia/modules/sksg/src/SkSGNode.cpp || obj/minify_sksl.stamp
+  source_file_part = SkSGNode.cpp
+  source_name_part = SkSGNode
+build obj/modules/sksg/src/libsksg.SkSGOpacityEffect.o: cxx ../ext/skia/modules/sksg/src/SkSGOpacityEffect.cpp || obj/minify_sksl.stamp
+  source_file_part = SkSGOpacityEffect.cpp
+  source_name_part = SkSGOpacityEffect
+build obj/modules/sksg/src/libsksg.SkSGPaint.o: cxx ../ext/skia/modules/sksg/src/SkSGPaint.cpp || obj/minify_sksl.stamp
+  source_file_part = SkSGPaint.cpp
+  source_name_part = SkSGPaint
+build obj/modules/sksg/src/libsksg.SkSGPath.o: cxx ../ext/skia/modules/sksg/src/SkSGPath.cpp || obj/minify_sksl.stamp
+  source_file_part = SkSGPath.cpp
+  source_name_part = SkSGPath
+build obj/modules/sksg/src/libsksg.SkSGPlane.o: cxx ../ext/skia/modules/sksg/src/SkSGPlane.cpp || obj/minify_sksl.stamp
+  source_file_part = SkSGPlane.cpp
+  source_name_part = SkSGPlane
+build obj/modules/sksg/src/libsksg.SkSGRect.o: cxx ../ext/skia/modules/sksg/src/SkSGRect.cpp || obj/minify_sksl.stamp
+  source_file_part = SkSGRect.cpp
+  source_name_part = SkSGRect
+build obj/modules/sksg/src/libsksg.SkSGRenderEffect.o: cxx ../ext/skia/modules/sksg/src/SkSGRenderEffect.cpp || obj/minify_sksl.stamp
+  source_file_part = SkSGRenderEffect.cpp
+  source_name_part = SkSGRenderEffect
+build obj/modules/sksg/src/libsksg.SkSGRenderNode.o: cxx ../ext/skia/modules/sksg/src/SkSGRenderNode.cpp || obj/minify_sksl.stamp
+  source_file_part = SkSGRenderNode.cpp
+  source_name_part = SkSGRenderNode
+build obj/modules/sksg/src/libsksg.SkSGScene.o: cxx ../ext/skia/modules/sksg/src/SkSGScene.cpp || obj/minify_sksl.stamp
+  source_file_part = SkSGScene.cpp
+  source_name_part = SkSGScene
+build obj/modules/sksg/src/libsksg.SkSGText.o: cxx ../ext/skia/modules/sksg/src/SkSGText.cpp || obj/minify_sksl.stamp
+  source_file_part = SkSGText.cpp
+  source_name_part = SkSGText
+build obj/modules/sksg/src/libsksg.SkSGTransform.o: cxx ../ext/skia/modules/sksg/src/SkSGTransform.cpp || obj/minify_sksl.stamp
+  source_file_part = SkSGTransform.cpp
+  source_name_part = SkSGTransform
+
+build ./libsksg.a: alink obj/modules/sksg/src/libsksg.SkSGClipEffect.o obj/modules/sksg/src/libsksg.SkSGColorFilter.o obj/modules/sksg/src/libsksg.SkSGDraw.o obj/modules/sksg/src/libsksg.SkSGEffectNode.o obj/modules/sksg/src/libsksg.SkSGGeometryEffect.o obj/modules/sksg/src/libsksg.SkSGGeometryNode.o obj/modules/sksg/src/libsksg.SkSGGradient.o obj/modules/sksg/src/libsksg.SkSGGroup.o obj/modules/sksg/src/libsksg.SkSGImage.o obj/modules/sksg/src/libsksg.SkSGInvalidationController.o obj/modules/sksg/src/libsksg.SkSGMaskEffect.o obj/modules/sksg/src/libsksg.SkSGMerge.o obj/modules/sksg/src/libsksg.SkSGNode.o obj/modules/sksg/src/libsksg.SkSGOpacityEffect.o obj/modules/sksg/src/libsksg.SkSGPaint.o obj/modules/sksg/src/libsksg.SkSGPath.o obj/modules/sksg/src/libsksg.SkSGPlane.o obj/modules/sksg/src/libsksg.SkSGRect.o obj/modules/sksg/src/libsksg.SkSGRenderEffect.o obj/modules/sksg/src/libsksg.SkSGRenderNode.o obj/modules/sksg/src/libsksg.SkSGScene.o obj/modules/sksg/src/libsksg.SkSGText.o obj/modules/sksg/src/libsksg.SkSGTransform.o || ./libskia.a
+  arflags =
+  output_extension = .a
+  output_dir = 

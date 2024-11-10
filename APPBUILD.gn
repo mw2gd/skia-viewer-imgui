@@ -2590,11 +2590,8 @@ if (skia_enable_tools) {
       libs = []
 
       deps = [
-        ":gm",
-        ":gpu_tool_utils",
         ":sk_app",
         ":skia",
-        ":tool_utils",
         "//third_party/imgui",
       ]
       if (skia_use_vulkan) {

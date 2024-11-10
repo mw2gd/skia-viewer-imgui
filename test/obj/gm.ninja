@@ -1,0 +1,1298 @@
+defines = -DNDEBUG -DSK_TRIVIAL_ABI=\[\[clang$:$:trivial_abi\]\] -DSK_GAMMA_APPLY_TO_A8 -DSK_ALLOW_STATIC_GLOBAL_INITIALIZERS=1 -DGPU_TEST_UTILS=1 -DSK_ENABLE_AVX512_OPTS -DSK_USE_INTERNAL_VULKAN_HEADERS -DSK_TYPEFACE_FACTORY_CORETEXT -DSK_FONTMGR_CORETEXT_AVAILABLE -DSK_GL -DSK_SUPPORT_PDF -DSK_CODEC_DECODES_JPEG -DSK_CODEC_DECODES_JPEG_GAINMAPS -DSK_XML -DSK_ENABLE_ANDROID_UTILS -DSK_HAS_HEIF_LIBRARY -DSK_CODEC_DECODES_ICO -DSK_CODEC_DECODES_PNG -DSK_CODEC_DECODES_RAW -DSK_CODEC_DECODES_WEBP -DSK_HAS_WUFFS_LIBRARY -DSK_CODEC_DECODES_GIF -DSK_CODEC_DECODES_BMP -DSK_CODEC_DECODES_WBMP -DSK_ENABLE_OPTIMIZE_SIZE -DSK_ENABLE_PRECOMPILE -DSK_ASSUME_GL=1 -DSK_GANESH -DSK_USE_PERFETTO -DSK_ENABLE_API_AVAILABLE -DSK_ENABLE_SKOTTIE -DSK_ENABLE_SKOTTIE_SKSLEFFECT -DSK_ENABLE_PARAGRAPH -DSK_UNICODE_AVAILABLE -DSK_UNICODE_ICU_IMPLEMENTATION -DSK_SHAPER_PRIMITIVE_AVAILABLE -DSK_SHAPER_CORETEXT_AVAILABLE -DSK_SHAPER_HARFBUZZ_AVAILABLE -DSK_SHAPER_UNICODE_AVAILABLE
+framework_dirs =
+include_dirs = -I../ext/skia/include/third_party/vulkan -I../ext/skia -I../ext/skia/modules/skottie/include -I../ext/skia/modules/skparagraph/include -I../ext/skia/modules/skparagraph/utils -I../ext/skia/modules/skresources/include -I../ext/skia/modules/skshaper/include -Igen
+cflags = -Wno-attributes -ffp-contract=off -fstrict-aliasing -fPIC -fvisibility=hidden -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -target x86_64-apple-macos10.15 -Oz -fno-PIE -fno-pie -g -gdwarf-4 -Wall -Wextra -Winit-self -Wpointer-arith -Wsign-compare -Wvla -Wno-deprecated-declarations -Wno-maybe-uninitialized -Wno-psabi -Wno-switch-default -Wno-unused-parameter -fcolor-diagnostics -Weverything -Wno-unknown-warning-option -Wno-weak-template-vtables -Wno-nonportable-include-path -Wno-nonportable-system-include-path -Wno-cast-align -Wno-conversion -Wno-disabled-macro-expansion -Wno-documentation -Wno-documentation-unknown-command -Wno-double-promotion -Wno-exit-time-destructors -Wno-float-equal -Wno-global-constructors -Wno-missing-prototypes -Wno-missing-variable-declarations -Wno-pedantic -Wno-reserved-id-macro -Wno-reserved-identifier -Wno-shift-sign-overflow -Wno-signed-enum-bitfield -Wno-switch-enum -Wno-thread-safety-negative -Wno-undef -Wno-unreachable-code-break -Wno-unreachable-code-return -Wno-unused-macros -Wno-unused-member-function -Wno-non-c-typedef-for-linkage -Wno-cast-function-type-strict -Wno-covered-switch-default -Wno-deprecated -Wno-missing-noreturn -Wno-old-style-cast -Wno-newline-eof -Wno-padded -Wno-return-std-move-in-c++11 -Wno-shadow-field-in-constructor -Wno-shadow-uncaptured-local -Wno-zero-as-null-pointer-constant -Wno-declaration-after-statement -Wno-unsafe-buffer-usage -Wno-range-loop-analysis -Wrange-loop-construct -Wdeprecated-anon-enum-enum-conversion -Wdeprecated-array-compare -Wdeprecated-attributes -Wdeprecated-comma-subscript -Wdeprecated-copy -Wdeprecated-copy-dtor -Wdeprecated-dynamic-exception-spec -Wdeprecated-enum-compare -Wdeprecated-enum-compare-conditional -Wdeprecated-enum-enum-conversion -Wdeprecated-enum-float-conversion -Wdeprecated-increment-bool -Wdeprecated-register -Wdeprecated-this-capture -Wdeprecated-volatile -Wdeprecated-writable-str -Wextra-semi
+cflags_cc = -std=c++17 -fvisibility-inlines-hidden -fno-exceptions -fno-rtti -Wnon-virtual-dtor -Wno-noexcept-type -Wno-abstract-vbase-init -Wno-weak-vtables -Wno-c++98-compat -Wno-c++98-compat-pedantic -Wno-undefined-func-template
+root_out_dir = .
+target_output_name = gm
+
+build obj/gm.inputdeps.stamp: stamp obj/minify_sksl.stamp obj/skia.h.stamp obj/third_party/icu/make_data_assembly.stamp
+build obj/gm/gm.3d.o: cxx ../ext/skia/gm/3d.cpp || obj/gm.inputdeps.stamp
+  source_file_part = 3d.cpp
+  source_name_part = 3d
+build obj/gm/gm.aaa.o: cxx ../ext/skia/gm/aaa.cpp || obj/gm.inputdeps.stamp
+  source_file_part = aaa.cpp
+  source_name_part = aaa
+build obj/gm/gm.aaclip.o: cxx ../ext/skia/gm/aaclip.cpp || obj/gm.inputdeps.stamp
+  source_file_part = aaclip.cpp
+  source_name_part = aaclip
+build obj/gm/gm.aarectmodes.o: cxx ../ext/skia/gm/aarectmodes.cpp || obj/gm.inputdeps.stamp
+  source_file_part = aarectmodes.cpp
+  source_name_part = aarectmodes
+build obj/gm/gm.aaxfermodes.o: cxx ../ext/skia/gm/aaxfermodes.cpp || obj/gm.inputdeps.stamp
+  source_file_part = aaxfermodes.cpp
+  source_name_part = aaxfermodes
+build obj/gm/gm.addarc.o: cxx ../ext/skia/gm/addarc.cpp || obj/gm.inputdeps.stamp
+  source_file_part = addarc.cpp
+  source_name_part = addarc
+build obj/gm/gm.all_bitmap_configs.o: cxx ../ext/skia/gm/all_bitmap_configs.cpp || obj/gm.inputdeps.stamp
+  source_file_part = all_bitmap_configs.cpp
+  source_name_part = all_bitmap_configs
+build obj/gm/gm.alpha_image.o: cxx ../ext/skia/gm/alpha_image.cpp || obj/gm.inputdeps.stamp
+  source_file_part = alpha_image.cpp
+  source_name_part = alpha_image
+build obj/gm/gm.alphagradients.o: cxx ../ext/skia/gm/alphagradients.cpp || obj/gm.inputdeps.stamp
+  source_file_part = alphagradients.cpp
+  source_name_part = alphagradients
+build obj/gm/gm.analytic_gradients.o: cxx ../ext/skia/gm/analytic_gradients.cpp || obj/gm.inputdeps.stamp
+  source_file_part = analytic_gradients.cpp
+  source_name_part = analytic_gradients
+build obj/gm/gm.androidblendmodes.o: cxx ../ext/skia/gm/androidblendmodes.cpp || obj/gm.inputdeps.stamp
+  source_file_part = androidblendmodes.cpp
+  source_name_part = androidblendmodes
+build obj/gm/gm.animated_gif.o: cxx ../ext/skia/gm/animated_gif.cpp || obj/gm.inputdeps.stamp
+  source_file_part = animated_gif.cpp
+  source_name_part = animated_gif
+build obj/gm/gm.animated_image_orientation.o: cxx ../ext/skia/gm/animated_image_orientation.cpp || obj/gm.inputdeps.stamp
+  source_file_part = animated_image_orientation.cpp
+  source_name_part = animated_image_orientation
+build obj/gm/gm.animatedimageblurs.o: cxx ../ext/skia/gm/animatedimageblurs.cpp || obj/gm.inputdeps.stamp
+  source_file_part = animatedimageblurs.cpp
+  source_name_part = animatedimageblurs
+build obj/gm/gm.anisotropic.o: cxx ../ext/skia/gm/anisotropic.cpp || obj/gm.inputdeps.stamp
+  source_file_part = anisotropic.cpp
+  source_name_part = anisotropic
+build obj/gm/gm.annotated_text.o: cxx ../ext/skia/gm/annotated_text.cpp || obj/gm.inputdeps.stamp
+  source_file_part = annotated_text.cpp
+  source_name_part = annotated_text
+build obj/gm/gm.arcofzorro.o: cxx ../ext/skia/gm/arcofzorro.cpp || obj/gm.inputdeps.stamp
+  source_file_part = arcofzorro.cpp
+  source_name_part = arcofzorro
+build obj/gm/gm.arcto.o: cxx ../ext/skia/gm/arcto.cpp || obj/gm.inputdeps.stamp
+  source_file_part = arcto.cpp
+  source_name_part = arcto
+build obj/gm/gm.arithmode.o: cxx ../ext/skia/gm/arithmode.cpp || obj/gm.inputdeps.stamp
+  source_file_part = arithmode.cpp
+  source_name_part = arithmode
+build obj/gm/gm.asyncrescaleandread.o: cxx ../ext/skia/gm/asyncrescaleandread.cpp || obj/gm.inputdeps.stamp
+  source_file_part = asyncrescaleandread.cpp
+  source_name_part = asyncrescaleandread
+build obj/gm/gm.b_119394958.o: cxx ../ext/skia/gm/b_119394958.cpp || obj/gm.inputdeps.stamp
+  source_file_part = b_119394958.cpp
+  source_name_part = b_119394958
+build obj/gm/gm.backdrop.o: cxx ../ext/skia/gm/backdrop.cpp || obj/gm.inputdeps.stamp
+  source_file_part = backdrop.cpp
+  source_name_part = backdrop
+build obj/gm/gm.backdrop_imagefilter_croprect.o: cxx ../ext/skia/gm/backdrop_imagefilter_croprect.cpp || obj/gm.inputdeps.stamp
+  source_file_part = backdrop_imagefilter_croprect.cpp
+  source_name_part = backdrop_imagefilter_croprect
+build obj/gm/gm.badpaint.o: cxx ../ext/skia/gm/badpaint.cpp || obj/gm.inputdeps.stamp
+  source_file_part = badpaint.cpp
+  source_name_part = badpaint
+build obj/gm/gm.batchedconvexpaths.o: cxx ../ext/skia/gm/batchedconvexpaths.cpp || obj/gm.inputdeps.stamp
+  source_file_part = batchedconvexpaths.cpp
+  source_name_part = batchedconvexpaths
+build obj/gm/gm.bc1_transparency.o: cxx ../ext/skia/gm/bc1_transparency.cpp || obj/gm.inputdeps.stamp
+  source_file_part = bc1_transparency.cpp
+  source_name_part = bc1_transparency
+build obj/gm/gm.beziers.o: cxx ../ext/skia/gm/beziers.cpp || obj/gm.inputdeps.stamp
+  source_file_part = beziers.cpp
+  source_name_part = beziers
+build obj/gm/gm.bicubic.o: cxx ../ext/skia/gm/bicubic.cpp || obj/gm.inputdeps.stamp
+  source_file_part = bicubic.cpp
+  source_name_part = bicubic
+build obj/gm/gm.bigblurs.o: cxx ../ext/skia/gm/bigblurs.cpp || obj/gm.inputdeps.stamp
+  source_file_part = bigblurs.cpp
+  source_name_part = bigblurs
+build obj/gm/gm.bigmatrix.o: cxx ../ext/skia/gm/bigmatrix.cpp || obj/gm.inputdeps.stamp
+  source_file_part = bigmatrix.cpp
+  source_name_part = bigmatrix
+build obj/gm/gm.bigrect.o: cxx ../ext/skia/gm/bigrect.cpp || obj/gm.inputdeps.stamp
+  source_file_part = bigrect.cpp
+  source_name_part = bigrect
+build obj/gm/gm.bigtext.o: cxx ../ext/skia/gm/bigtext.cpp || obj/gm.inputdeps.stamp
+  source_file_part = bigtext.cpp
+  source_name_part = bigtext
+build obj/gm/gm.bigtileimagefilter.o: cxx ../ext/skia/gm/bigtileimagefilter.cpp || obj/gm.inputdeps.stamp
+  source_file_part = bigtileimagefilter.cpp
+  source_name_part = bigtileimagefilter
+build obj/gm/gm.bitmapcopy.o: cxx ../ext/skia/gm/bitmapcopy.cpp || obj/gm.inputdeps.stamp
+  source_file_part = bitmapcopy.cpp
+  source_name_part = bitmapcopy
+build obj/gm/gm.bitmapfilters.o: cxx ../ext/skia/gm/bitmapfilters.cpp || obj/gm.inputdeps.stamp
+  source_file_part = bitmapfilters.cpp
+  source_name_part = bitmapfilters
+build obj/gm/gm.bitmapimage.o: cxx ../ext/skia/gm/bitmapimage.cpp || obj/gm.inputdeps.stamp
+  source_file_part = bitmapimage.cpp
+  source_name_part = bitmapimage
+build obj/gm/gm.bitmappremul.o: cxx ../ext/skia/gm/bitmappremul.cpp || obj/gm.inputdeps.stamp
+  source_file_part = bitmappremul.cpp
+  source_name_part = bitmappremul
+build obj/gm/gm.bitmaprect.o: cxx ../ext/skia/gm/bitmaprect.cpp || obj/gm.inputdeps.stamp
+  source_file_part = bitmaprect.cpp
+  source_name_part = bitmaprect
+build obj/gm/gm.bitmaprecttest.o: cxx ../ext/skia/gm/bitmaprecttest.cpp || obj/gm.inputdeps.stamp
+  source_file_part = bitmaprecttest.cpp
+  source_name_part = bitmaprecttest
+build obj/gm/gm.bitmapshader.o: cxx ../ext/skia/gm/bitmapshader.cpp || obj/gm.inputdeps.stamp
+  source_file_part = bitmapshader.cpp
+  source_name_part = bitmapshader
+build obj/gm/gm.bitmaptiled.o: cxx ../ext/skia/gm/bitmaptiled.cpp || obj/gm.inputdeps.stamp
+  source_file_part = bitmaptiled.cpp
+  source_name_part = bitmaptiled
+build obj/gm/gm.bleed.o: cxx ../ext/skia/gm/bleed.cpp || obj/gm.inputdeps.stamp
+  source_file_part = bleed.cpp
+  source_name_part = bleed
+build obj/gm/gm.blend.o: cxx ../ext/skia/gm/blend.cpp || obj/gm.inputdeps.stamp
+  source_file_part = blend.cpp
+  source_name_part = blend
+build obj/gm/gm.blurcircles.o: cxx ../ext/skia/gm/blurcircles.cpp || obj/gm.inputdeps.stamp
+  source_file_part = blurcircles.cpp
+  source_name_part = blurcircles
+build obj/gm/gm.blurcircles2.o: cxx ../ext/skia/gm/blurcircles2.cpp || obj/gm.inputdeps.stamp
+  source_file_part = blurcircles2.cpp
+  source_name_part = blurcircles2
+build obj/gm/gm.blurignorexform.o: cxx ../ext/skia/gm/blurignorexform.cpp || obj/gm.inputdeps.stamp
+  source_file_part = blurignorexform.cpp
+  source_name_part = blurignorexform
+build obj/gm/gm.blurimagevmask.o: cxx ../ext/skia/gm/blurimagevmask.cpp || obj/gm.inputdeps.stamp
+  source_file_part = blurimagevmask.cpp
+  source_name_part = blurimagevmask
+build obj/gm/gm.blurpositioning.o: cxx ../ext/skia/gm/blurpositioning.cpp || obj/gm.inputdeps.stamp
+  source_file_part = blurpositioning.cpp
+  source_name_part = blurpositioning
+build obj/gm/gm.blurquickreject.o: cxx ../ext/skia/gm/blurquickreject.cpp || obj/gm.inputdeps.stamp
+  source_file_part = blurquickreject.cpp
+  source_name_part = blurquickreject
+build obj/gm/gm.blurrect.o: cxx ../ext/skia/gm/blurrect.cpp || obj/gm.inputdeps.stamp
+  source_file_part = blurrect.cpp
+  source_name_part = blurrect
+build obj/gm/gm.blurredclippedcircle.o: cxx ../ext/skia/gm/blurredclippedcircle.cpp || obj/gm.inputdeps.stamp
+  source_file_part = blurredclippedcircle.cpp
+  source_name_part = blurredclippedcircle
+build obj/gm/gm.blurroundrect.o: cxx ../ext/skia/gm/blurroundrect.cpp || obj/gm.inputdeps.stamp
+  source_file_part = blurroundrect.cpp
+  source_name_part = blurroundrect
+build obj/gm/gm.blurs.o: cxx ../ext/skia/gm/blurs.cpp || obj/gm.inputdeps.stamp
+  source_file_part = blurs.cpp
+  source_name_part = blurs
+build obj/gm/gm.blurtextsmallradii.o: cxx ../ext/skia/gm/blurtextsmallradii.cpp || obj/gm.inputdeps.stamp
+  source_file_part = blurtextsmallradii.cpp
+  source_name_part = blurtextsmallradii
+build obj/gm/gm.bmpfilterqualityrepeat.o: cxx ../ext/skia/gm/bmpfilterqualityrepeat.cpp || obj/gm.inputdeps.stamp
+  source_file_part = bmpfilterqualityrepeat.cpp
+  source_name_part = bmpfilterqualityrepeat
+build obj/gm/gm.bug12866.o: cxx ../ext/skia/gm/bug12866.cpp || obj/gm.inputdeps.stamp
+  source_file_part = bug12866.cpp
+  source_name_part = bug12866
+build obj/gm/gm.bug5252.o: cxx ../ext/skia/gm/bug5252.cpp || obj/gm.inputdeps.stamp
+  source_file_part = bug5252.cpp
+  source_name_part = bug5252
+build obj/gm/gm.bug530095.o: cxx ../ext/skia/gm/bug530095.cpp || obj/gm.inputdeps.stamp
+  source_file_part = bug530095.cpp
+  source_name_part = bug530095
+build obj/gm/gm.bug615686.o: cxx ../ext/skia/gm/bug615686.cpp || obj/gm.inputdeps.stamp
+  source_file_part = bug615686.cpp
+  source_name_part = bug615686
+build obj/gm/gm.bug6643.o: cxx ../ext/skia/gm/bug6643.cpp || obj/gm.inputdeps.stamp
+  source_file_part = bug6643.cpp
+  source_name_part = bug6643
+build obj/gm/gm.bug6783.o: cxx ../ext/skia/gm/bug6783.cpp || obj/gm.inputdeps.stamp
+  source_file_part = bug6783.cpp
+  source_name_part = bug6783
+build obj/gm/gm.bug9331.o: cxx ../ext/skia/gm/bug9331.cpp || obj/gm.inputdeps.stamp
+  source_file_part = bug9331.cpp
+  source_name_part = bug9331
+build obj/gm/gm.circle_sizes.o: cxx ../ext/skia/gm/circle_sizes.cpp || obj/gm.inputdeps.stamp
+  source_file_part = circle_sizes.cpp
+  source_name_part = circle_sizes
+build obj/gm/gm.circulararcs.o: cxx ../ext/skia/gm/circulararcs.cpp || obj/gm.inputdeps.stamp
+  source_file_part = circulararcs.cpp
+  source_name_part = circulararcs
+build obj/gm/gm.circularclips.o: cxx ../ext/skia/gm/circularclips.cpp || obj/gm.inputdeps.stamp
+  source_file_part = circularclips.cpp
+  source_name_part = circularclips
+build obj/gm/gm.clip_error.o: cxx ../ext/skia/gm/clip_error.cpp || obj/gm.inputdeps.stamp
+  source_file_part = clip_error.cpp
+  source_name_part = clip_error
+build obj/gm/gm.clip_sierpinski_region.o: cxx ../ext/skia/gm/clip_sierpinski_region.cpp || obj/gm.inputdeps.stamp
+  source_file_part = clip_sierpinski_region.cpp
+  source_name_part = clip_sierpinski_region
+build obj/gm/gm.clip_strokerect.o: cxx ../ext/skia/gm/clip_strokerect.cpp || obj/gm.inputdeps.stamp
+  source_file_part = clip_strokerect.cpp
+  source_name_part = clip_strokerect
+build obj/gm/gm.clipdrawdraw.o: cxx ../ext/skia/gm/clipdrawdraw.cpp || obj/gm.inputdeps.stamp
+  source_file_part = clipdrawdraw.cpp
+  source_name_part = clipdrawdraw
+build obj/gm/gm.clippedbitmapshaders.o: cxx ../ext/skia/gm/clippedbitmapshaders.cpp || obj/gm.inputdeps.stamp
+  source_file_part = clippedbitmapshaders.cpp
+  source_name_part = clippedbitmapshaders
+build obj/gm/gm.clipshader.o: cxx ../ext/skia/gm/clipshader.cpp || obj/gm.inputdeps.stamp
+  source_file_part = clipshader.cpp
+  source_name_part = clipshader
+build obj/gm/gm.collapsepaths.o: cxx ../ext/skia/gm/collapsepaths.cpp || obj/gm.inputdeps.stamp
+  source_file_part = collapsepaths.cpp
+  source_name_part = collapsepaths
+build obj/gm/gm.color4f.o: cxx ../ext/skia/gm/color4f.cpp || obj/gm.inputdeps.stamp
+  source_file_part = color4f.cpp
+  source_name_part = color4f
+build obj/gm/gm.coloremoji.o: cxx ../ext/skia/gm/coloremoji.cpp || obj/gm.inputdeps.stamp
+  source_file_part = coloremoji.cpp
+  source_name_part = coloremoji
+build obj/gm/gm.coloremoji_blendmodes.o: cxx ../ext/skia/gm/coloremoji_blendmodes.cpp || obj/gm.inputdeps.stamp
+  source_file_part = coloremoji_blendmodes.cpp
+  source_name_part = coloremoji_blendmodes
+build obj/gm/gm.colorfilteralpha8.o: cxx ../ext/skia/gm/colorfilteralpha8.cpp || obj/gm.inputdeps.stamp
+  source_file_part = colorfilteralpha8.cpp
+  source_name_part = colorfilteralpha8
+build obj/gm/gm.colorfilterimagefilter.o: cxx ../ext/skia/gm/colorfilterimagefilter.cpp || obj/gm.inputdeps.stamp
+  source_file_part = colorfilterimagefilter.cpp
+  source_name_part = colorfilterimagefilter
+build obj/gm/gm.colorfilters.o: cxx ../ext/skia/gm/colorfilters.cpp || obj/gm.inputdeps.stamp
+  source_file_part = colorfilters.cpp
+  source_name_part = colorfilters
+build obj/gm/gm.colormatrix.o: cxx ../ext/skia/gm/colormatrix.cpp || obj/gm.inputdeps.stamp
+  source_file_part = colormatrix.cpp
+  source_name_part = colormatrix
+build obj/gm/gm.colorspace.o: cxx ../ext/skia/gm/colorspace.cpp || obj/gm.inputdeps.stamp
+  source_file_part = colorspace.cpp
+  source_name_part = colorspace
+build obj/gm/gm.colorwheel.o: cxx ../ext/skia/gm/colorwheel.cpp || obj/gm.inputdeps.stamp
+  source_file_part = colorwheel.cpp
+  source_name_part = colorwheel
+build obj/gm/gm.colrv1.o: cxx ../ext/skia/gm/colrv1.cpp || obj/gm.inputdeps.stamp
+  source_file_part = colrv1.cpp
+  source_name_part = colrv1
+build obj/gm/gm.complexclip.o: cxx ../ext/skia/gm/complexclip.cpp || obj/gm.inputdeps.stamp
+  source_file_part = complexclip.cpp
+  source_name_part = complexclip
+build obj/gm/gm.complexclip2.o: cxx ../ext/skia/gm/complexclip2.cpp || obj/gm.inputdeps.stamp
+  source_file_part = complexclip2.cpp
+  source_name_part = complexclip2
+build obj/gm/gm.complexclip3.o: cxx ../ext/skia/gm/complexclip3.cpp || obj/gm.inputdeps.stamp
+  source_file_part = complexclip3.cpp
+  source_name_part = complexclip3
+build obj/gm/gm.complexclip4.o: cxx ../ext/skia/gm/complexclip4.cpp || obj/gm.inputdeps.stamp
+  source_file_part = complexclip4.cpp
+  source_name_part = complexclip4
+build obj/gm/gm.complexclip_blur_tiled.o: cxx ../ext/skia/gm/complexclip_blur_tiled.cpp || obj/gm.inputdeps.stamp
+  source_file_part = complexclip_blur_tiled.cpp
+  source_name_part = complexclip_blur_tiled
+build obj/gm/gm.composecolorfilter.o: cxx ../ext/skia/gm/composecolorfilter.cpp || obj/gm.inputdeps.stamp
+  source_file_part = composecolorfilter.cpp
+  source_name_part = composecolorfilter
+build obj/gm/gm.composeshader.o: cxx ../ext/skia/gm/composeshader.cpp || obj/gm.inputdeps.stamp
+  source_file_part = composeshader.cpp
+  source_name_part = composeshader
+build obj/gm/gm.compositor_quads.o: cxx ../ext/skia/gm/compositor_quads.cpp || obj/gm.inputdeps.stamp
+  source_file_part = compositor_quads.cpp
+  source_name_part = compositor_quads
+build obj/gm/gm.compressed_textures.o: cxx ../ext/skia/gm/compressed_textures.cpp || obj/gm.inputdeps.stamp
+  source_file_part = compressed_textures.cpp
+  source_name_part = compressed_textures
+build obj/gm/gm.concavepaths.o: cxx ../ext/skia/gm/concavepaths.cpp || obj/gm.inputdeps.stamp
+  source_file_part = concavepaths.cpp
+  source_name_part = concavepaths
+build obj/gm/gm.conicpaths.o: cxx ../ext/skia/gm/conicpaths.cpp || obj/gm.inputdeps.stamp
+  source_file_part = conicpaths.cpp
+  source_name_part = conicpaths
+build obj/gm/gm.convex_all_line_paths.o: cxx ../ext/skia/gm/convex_all_line_paths.cpp || obj/gm.inputdeps.stamp
+  source_file_part = convex_all_line_paths.cpp
+  source_name_part = convex_all_line_paths
+build obj/gm/gm.convexpaths.o: cxx ../ext/skia/gm/convexpaths.cpp || obj/gm.inputdeps.stamp
+  source_file_part = convexpaths.cpp
+  source_name_part = convexpaths
+build obj/gm/gm.convexpolyclip.o: cxx ../ext/skia/gm/convexpolyclip.cpp || obj/gm.inputdeps.stamp
+  source_file_part = convexpolyclip.cpp
+  source_name_part = convexpolyclip
+build obj/gm/gm.coordclampshader.o: cxx ../ext/skia/gm/coordclampshader.cpp || obj/gm.inputdeps.stamp
+  source_file_part = coordclampshader.cpp
+  source_name_part = coordclampshader
+build obj/gm/gm.copy_to_4444.o: cxx ../ext/skia/gm/copy_to_4444.cpp || obj/gm.inputdeps.stamp
+  source_file_part = copy_to_4444.cpp
+  source_name_part = copy_to_4444
+build obj/gm/gm.crbug_1041204.o: cxx ../ext/skia/gm/crbug_1041204.cpp || obj/gm.inputdeps.stamp
+  source_file_part = crbug_1041204.cpp
+  source_name_part = crbug_1041204
+build obj/gm/gm.crbug_1073670.o: cxx ../ext/skia/gm/crbug_1073670.cpp || obj/gm.inputdeps.stamp
+  source_file_part = crbug_1073670.cpp
+  source_name_part = crbug_1073670
+build obj/gm/gm.crbug_1086705.o: cxx ../ext/skia/gm/crbug_1086705.cpp || obj/gm.inputdeps.stamp
+  source_file_part = crbug_1086705.cpp
+  source_name_part = crbug_1086705
+build obj/gm/gm.crbug_1113794.o: cxx ../ext/skia/gm/crbug_1113794.cpp || obj/gm.inputdeps.stamp
+  source_file_part = crbug_1113794.cpp
+  source_name_part = crbug_1113794
+build obj/gm/gm.crbug_1139750.o: cxx ../ext/skia/gm/crbug_1139750.cpp || obj/gm.inputdeps.stamp
+  source_file_part = crbug_1139750.cpp
+  source_name_part = crbug_1139750
+build obj/gm/gm.crbug_1156804.o: cxx ../ext/skia/gm/crbug_1156804.cpp || obj/gm.inputdeps.stamp
+  source_file_part = crbug_1156804.cpp
+  source_name_part = crbug_1156804
+build obj/gm/gm.crbug_1162942.o: cxx ../ext/skia/gm/crbug_1162942.cpp || obj/gm.inputdeps.stamp
+  source_file_part = crbug_1162942.cpp
+  source_name_part = crbug_1162942
+build obj/gm/gm.crbug_1167277.o: cxx ../ext/skia/gm/crbug_1167277.cpp || obj/gm.inputdeps.stamp
+  source_file_part = crbug_1167277.cpp
+  source_name_part = crbug_1167277
+build obj/gm/gm.crbug_1174186.o: cxx ../ext/skia/gm/crbug_1174186.cpp || obj/gm.inputdeps.stamp
+  source_file_part = crbug_1174186.cpp
+  source_name_part = crbug_1174186
+build obj/gm/gm.crbug_1174354.o: cxx ../ext/skia/gm/crbug_1174354.cpp || obj/gm.inputdeps.stamp
+  source_file_part = crbug_1174354.cpp
+  source_name_part = crbug_1174354
+build obj/gm/gm.crbug_1177833.o: cxx ../ext/skia/gm/crbug_1177833.cpp || obj/gm.inputdeps.stamp
+  source_file_part = crbug_1177833.cpp
+  source_name_part = crbug_1177833
+build obj/gm/gm.crbug_1257515.o: cxx ../ext/skia/gm/crbug_1257515.cpp || obj/gm.inputdeps.stamp
+  source_file_part = crbug_1257515.cpp
+  source_name_part = crbug_1257515
+build obj/gm/gm.crbug_1313579.o: cxx ../ext/skia/gm/crbug_1313579.cpp || obj/gm.inputdeps.stamp
+  source_file_part = crbug_1313579.cpp
+  source_name_part = crbug_1313579
+build obj/gm/gm.crbug_224618.o: cxx ../ext/skia/gm/crbug_224618.cpp || obj/gm.inputdeps.stamp
+  source_file_part = crbug_224618.cpp
+  source_name_part = crbug_224618
+build obj/gm/gm.crbug_691386.o: cxx ../ext/skia/gm/crbug_691386.cpp || obj/gm.inputdeps.stamp
+  source_file_part = crbug_691386.cpp
+  source_name_part = crbug_691386
+build obj/gm/gm.crbug_788500.o: cxx ../ext/skia/gm/crbug_788500.cpp || obj/gm.inputdeps.stamp
+  source_file_part = crbug_788500.cpp
+  source_name_part = crbug_788500
+build obj/gm/gm.crbug_847759.o: cxx ../ext/skia/gm/crbug_847759.cpp || obj/gm.inputdeps.stamp
+  source_file_part = crbug_847759.cpp
+  source_name_part = crbug_847759
+build obj/gm/gm.crbug_884166.o: cxx ../ext/skia/gm/crbug_884166.cpp || obj/gm.inputdeps.stamp
+  source_file_part = crbug_884166.cpp
+  source_name_part = crbug_884166
+build obj/gm/gm.crbug_887103.o: cxx ../ext/skia/gm/crbug_887103.cpp || obj/gm.inputdeps.stamp
+  source_file_part = crbug_887103.cpp
+  source_name_part = crbug_887103
+build obj/gm/gm.crbug_892988.o: cxx ../ext/skia/gm/crbug_892988.cpp || obj/gm.inputdeps.stamp
+  source_file_part = crbug_892988.cpp
+  source_name_part = crbug_892988
+build obj/gm/gm.crbug_899512.o: cxx ../ext/skia/gm/crbug_899512.cpp || obj/gm.inputdeps.stamp
+  source_file_part = crbug_899512.cpp
+  source_name_part = crbug_899512
+build obj/gm/gm.crbug_905548.o: cxx ../ext/skia/gm/crbug_905548.cpp || obj/gm.inputdeps.stamp
+  source_file_part = crbug_905548.cpp
+  source_name_part = crbug_905548
+build obj/gm/gm.crbug_908646.o: cxx ../ext/skia/gm/crbug_908646.cpp || obj/gm.inputdeps.stamp
+  source_file_part = crbug_908646.cpp
+  source_name_part = crbug_908646
+build obj/gm/gm.crbug_913349.o: cxx ../ext/skia/gm/crbug_913349.cpp || obj/gm.inputdeps.stamp
+  source_file_part = crbug_913349.cpp
+  source_name_part = crbug_913349
+build obj/gm/gm.crbug_918512.o: cxx ../ext/skia/gm/crbug_918512.cpp || obj/gm.inputdeps.stamp
+  source_file_part = crbug_918512.cpp
+  source_name_part = crbug_918512
+build obj/gm/gm.crbug_938592.o: cxx ../ext/skia/gm/crbug_938592.cpp || obj/gm.inputdeps.stamp
+  source_file_part = crbug_938592.cpp
+  source_name_part = crbug_938592
+build obj/gm/gm.crbug_946965.o: cxx ../ext/skia/gm/crbug_946965.cpp || obj/gm.inputdeps.stamp
+  source_file_part = crbug_946965.cpp
+  source_name_part = crbug_946965
+build obj/gm/gm.crbug_947055.o: cxx ../ext/skia/gm/crbug_947055.cpp || obj/gm.inputdeps.stamp
+  source_file_part = crbug_947055.cpp
+  source_name_part = crbug_947055
+build obj/gm/gm.crbug_996140.o: cxx ../ext/skia/gm/crbug_996140.cpp || obj/gm.inputdeps.stamp
+  source_file_part = crbug_996140.cpp
+  source_name_part = crbug_996140
+build obj/gm/gm.crop_imagefilter.o: cxx ../ext/skia/gm/crop_imagefilter.cpp || obj/gm.inputdeps.stamp
+  source_file_part = crop_imagefilter.cpp
+  source_name_part = crop_imagefilter
+build obj/gm/gm.croppedrects.o: cxx ../ext/skia/gm/croppedrects.cpp || obj/gm.inputdeps.stamp
+  source_file_part = croppedrects.cpp
+  source_name_part = croppedrects
+build obj/gm/gm.crosscontextimage.o: cxx ../ext/skia/gm/crosscontextimage.cpp || obj/gm.inputdeps.stamp
+  source_file_part = crosscontextimage.cpp
+  source_name_part = crosscontextimage
+build obj/gm/gm.cubicpaths.o: cxx ../ext/skia/gm/cubicpaths.cpp || obj/gm.inputdeps.stamp
+  source_file_part = cubicpaths.cpp
+  source_name_part = cubicpaths
+build obj/gm/gm.daa.o: cxx ../ext/skia/gm/daa.cpp || obj/gm.inputdeps.stamp
+  source_file_part = daa.cpp
+  source_name_part = daa
+build obj/gm/gm.dashcircle.o: cxx ../ext/skia/gm/dashcircle.cpp || obj/gm.inputdeps.stamp
+  source_file_part = dashcircle.cpp
+  source_name_part = dashcircle
+build obj/gm/gm.dashcubics.o: cxx ../ext/skia/gm/dashcubics.cpp || obj/gm.inputdeps.stamp
+  source_file_part = dashcubics.cpp
+  source_name_part = dashcubics
+build obj/gm/gm.dashing.o: cxx ../ext/skia/gm/dashing.cpp || obj/gm.inputdeps.stamp
+  source_file_part = dashing.cpp
+  source_name_part = dashing
+build obj/gm/gm.degeneratesegments.o: cxx ../ext/skia/gm/degeneratesegments.cpp || obj/gm.inputdeps.stamp
+  source_file_part = degeneratesegments.cpp
+  source_name_part = degeneratesegments
+build obj/gm/gm.dftext.o: cxx ../ext/skia/gm/dftext.cpp || obj/gm.inputdeps.stamp
+  source_file_part = dftext.cpp
+  source_name_part = dftext
+build obj/gm/gm.dftext_blob_persp.o: cxx ../ext/skia/gm/dftext_blob_persp.cpp || obj/gm.inputdeps.stamp
+  source_file_part = dftext_blob_persp.cpp
+  source_name_part = dftext_blob_persp
+build obj/gm/gm.discard.o: cxx ../ext/skia/gm/discard.cpp || obj/gm.inputdeps.stamp
+  source_file_part = discard.cpp
+  source_name_part = discard
+build obj/gm/gm.displacement.o: cxx ../ext/skia/gm/displacement.cpp || obj/gm.inputdeps.stamp
+  source_file_part = displacement.cpp
+  source_name_part = displacement
+build obj/gm/gm.distantclip.o: cxx ../ext/skia/gm/distantclip.cpp || obj/gm.inputdeps.stamp
+  source_file_part = distantclip.cpp
+  source_name_part = distantclip
+build obj/gm/gm.draw_bitmap_rect_skbug4374.o: cxx ../ext/skia/gm/draw_bitmap_rect_skbug4374.cpp || obj/gm.inputdeps.stamp
+  source_file_part = draw_bitmap_rect_skbug4374.cpp
+  source_name_part = draw_bitmap_rect_skbug4374
+build obj/gm/gm.drawable.o: cxx ../ext/skia/gm/drawable.cpp || obj/gm.inputdeps.stamp
+  source_file_part = drawable.cpp
+  source_name_part = drawable
+build obj/gm/gm.drawatlas.o: cxx ../ext/skia/gm/drawatlas.cpp || obj/gm.inputdeps.stamp
+  source_file_part = drawatlas.cpp
+  source_name_part = drawatlas
+build obj/gm/gm.drawatlascolor.o: cxx ../ext/skia/gm/drawatlascolor.cpp || obj/gm.inputdeps.stamp
+  source_file_part = drawatlascolor.cpp
+  source_name_part = drawatlascolor
+build obj/gm/gm.drawbitmaprect.o: cxx ../ext/skia/gm/drawbitmaprect.cpp || obj/gm.inputdeps.stamp
+  source_file_part = drawbitmaprect.cpp
+  source_name_part = drawbitmaprect
+build obj/gm/gm.drawglyphs.o: cxx ../ext/skia/gm/drawglyphs.cpp || obj/gm.inputdeps.stamp
+  source_file_part = drawglyphs.cpp
+  source_name_part = drawglyphs
+build obj/gm/gm.drawimageset.o: cxx ../ext/skia/gm/drawimageset.cpp || obj/gm.inputdeps.stamp
+  source_file_part = drawimageset.cpp
+  source_name_part = drawimageset
+build obj/gm/gm.drawlines_with_local_matrix.o: cxx ../ext/skia/gm/drawlines_with_local_matrix.cpp || obj/gm.inputdeps.stamp
+  source_file_part = drawlines_with_local_matrix.cpp
+  source_name_part = drawlines_with_local_matrix
+build obj/gm/gm.drawminibitmaprect.o: cxx ../ext/skia/gm/drawminibitmaprect.cpp || obj/gm.inputdeps.stamp
+  source_file_part = drawminibitmaprect.cpp
+  source_name_part = drawminibitmaprect
+build obj/gm/gm.drawregion.o: cxx ../ext/skia/gm/drawregion.cpp || obj/gm.inputdeps.stamp
+  source_file_part = drawregion.cpp
+  source_name_part = drawregion
+build obj/gm/gm.drawregionmodes.o: cxx ../ext/skia/gm/drawregionmodes.cpp || obj/gm.inputdeps.stamp
+  source_file_part = drawregionmodes.cpp
+  source_name_part = drawregionmodes
+build obj/gm/gm.dropshadowimagefilter.o: cxx ../ext/skia/gm/dropshadowimagefilter.cpp || obj/gm.inputdeps.stamp
+  source_file_part = dropshadowimagefilter.cpp
+  source_name_part = dropshadowimagefilter
+build obj/gm/gm.drrect.o: cxx ../ext/skia/gm/drrect.cpp || obj/gm.inputdeps.stamp
+  source_file_part = drrect.cpp
+  source_name_part = drrect
+build obj/gm/gm.drrect_small_inner.o: cxx ../ext/skia/gm/drrect_small_inner.cpp || obj/gm.inputdeps.stamp
+  source_file_part = drrect_small_inner.cpp
+  source_name_part = drrect_small_inner
+build obj/gm/gm.dstreadshuffle.o: cxx ../ext/skia/gm/dstreadshuffle.cpp || obj/gm.inputdeps.stamp
+  source_file_part = dstreadshuffle.cpp
+  source_name_part = dstreadshuffle
+build obj/gm/gm.ducky_yuv_blend.o: cxx ../ext/skia/gm/ducky_yuv_blend.cpp || obj/gm.inputdeps.stamp
+  source_file_part = ducky_yuv_blend.cpp
+  source_name_part = ducky_yuv_blend
+build obj/gm/gm.emboss.o: cxx ../ext/skia/gm/emboss.cpp || obj/gm.inputdeps.stamp
+  source_file_part = emboss.cpp
+  source_name_part = emboss
+build obj/gm/gm.emptypath.o: cxx ../ext/skia/gm/emptypath.cpp || obj/gm.inputdeps.stamp
+  source_file_part = emptypath.cpp
+  source_name_part = emptypath
+build obj/gm/gm.emptyshader.o: cxx ../ext/skia/gm/emptyshader.cpp || obj/gm.inputdeps.stamp
+  source_file_part = emptyshader.cpp
+  source_name_part = emptyshader
+build obj/gm/gm.encode.o: cxx ../ext/skia/gm/encode.cpp || obj/gm.inputdeps.stamp
+  source_file_part = encode.cpp
+  source_name_part = encode
+build obj/gm/gm.encode_alpha_jpeg.o: cxx ../ext/skia/gm/encode_alpha_jpeg.cpp || obj/gm.inputdeps.stamp
+  source_file_part = encode_alpha_jpeg.cpp
+  source_name_part = encode_alpha_jpeg
+build obj/gm/gm.encode_color_types.o: cxx ../ext/skia/gm/encode_color_types.cpp || obj/gm.inputdeps.stamp
+  source_file_part = encode_color_types.cpp
+  source_name_part = encode_color_types
+build obj/gm/gm.encode_platform.o: cxx ../ext/skia/gm/encode_platform.cpp || obj/gm.inputdeps.stamp
+  source_file_part = encode_platform.cpp
+  source_name_part = encode_platform
+build obj/gm/gm.encode_srgb.o: cxx ../ext/skia/gm/encode_srgb.cpp || obj/gm.inputdeps.stamp
+  source_file_part = encode_srgb.cpp
+  source_name_part = encode_srgb
+build obj/gm/gm.exoticformats.o: cxx ../ext/skia/gm/exoticformats.cpp || obj/gm.inputdeps.stamp
+  source_file_part = exoticformats.cpp
+  source_name_part = exoticformats
+build obj/gm/gm.fadefilter.o: cxx ../ext/skia/gm/fadefilter.cpp || obj/gm.inputdeps.stamp
+  source_file_part = fadefilter.cpp
+  source_name_part = fadefilter
+build obj/gm/gm.fatpathfill.o: cxx ../ext/skia/gm/fatpathfill.cpp || obj/gm.inputdeps.stamp
+  source_file_part = fatpathfill.cpp
+  source_name_part = fatpathfill
+build obj/gm/gm.fillrect_gradient.o: cxx ../ext/skia/gm/fillrect_gradient.cpp || obj/gm.inputdeps.stamp
+  source_file_part = fillrect_gradient.cpp
+  source_name_part = fillrect_gradient
+build obj/gm/gm.filltypes.o: cxx ../ext/skia/gm/filltypes.cpp || obj/gm.inputdeps.stamp
+  source_file_part = filltypes.cpp
+  source_name_part = filltypes
+build obj/gm/gm.filltypespersp.o: cxx ../ext/skia/gm/filltypespersp.cpp || obj/gm.inputdeps.stamp
+  source_file_part = filltypespersp.cpp
+  source_name_part = filltypespersp
+build obj/gm/gm.filterbug.o: cxx ../ext/skia/gm/filterbug.cpp || obj/gm.inputdeps.stamp
+  source_file_part = filterbug.cpp
+  source_name_part = filterbug
+build obj/gm/gm.filterfastbounds.o: cxx ../ext/skia/gm/filterfastbounds.cpp || obj/gm.inputdeps.stamp
+  source_file_part = filterfastbounds.cpp
+  source_name_part = filterfastbounds
+build obj/gm/gm.filterindiabox.o: cxx ../ext/skia/gm/filterindiabox.cpp || obj/gm.inputdeps.stamp
+  source_file_part = filterindiabox.cpp
+  source_name_part = filterindiabox
+build obj/gm/gm.flippity.o: cxx ../ext/skia/gm/flippity.cpp || obj/gm.inputdeps.stamp
+  source_file_part = flippity.cpp
+  source_name_part = flippity
+build obj/gm/gm.fontcache.o: cxx ../ext/skia/gm/fontcache.cpp || obj/gm.inputdeps.stamp
+  source_file_part = fontcache.cpp
+  source_name_part = fontcache
+build obj/gm/gm.fontmgr.o: cxx ../ext/skia/gm/fontmgr.cpp || obj/gm.inputdeps.stamp
+  source_file_part = fontmgr.cpp
+  source_name_part = fontmgr
+build obj/gm/gm.fontregen.o: cxx ../ext/skia/gm/fontregen.cpp || obj/gm.inputdeps.stamp
+  source_file_part = fontregen.cpp
+  source_name_part = fontregen
+build obj/gm/gm.fontscaler.o: cxx ../ext/skia/gm/fontscaler.cpp || obj/gm.inputdeps.stamp
+  source_file_part = fontscaler.cpp
+  source_name_part = fontscaler
+build obj/gm/gm.fontscalerdistortable.o: cxx ../ext/skia/gm/fontscalerdistortable.cpp || obj/gm.inputdeps.stamp
+  source_file_part = fontscalerdistortable.cpp
+  source_name_part = fontscalerdistortable
+build obj/gm/gm.gammatext.o: cxx ../ext/skia/gm/gammatext.cpp || obj/gm.inputdeps.stamp
+  source_file_part = gammatext.cpp
+  source_name_part = gammatext
+build obj/gm/gm.getpostextpath.o: cxx ../ext/skia/gm/getpostextpath.cpp || obj/gm.inputdeps.stamp
+  source_file_part = getpostextpath.cpp
+  source_name_part = getpostextpath
+build obj/gm/gm.giantbitmap.o: cxx ../ext/skia/gm/giantbitmap.cpp || obj/gm.inputdeps.stamp
+  source_file_part = giantbitmap.cpp
+  source_name_part = giantbitmap
+build obj/gm/gm.glyph_pos.o: cxx ../ext/skia/gm/glyph_pos.cpp || obj/gm.inputdeps.stamp
+  source_file_part = glyph_pos.cpp
+  source_name_part = glyph_pos
+build obj/gm/gm.gm.o: cxx ../ext/skia/gm/gm.cpp || obj/gm.inputdeps.stamp
+  source_file_part = gm.cpp
+  source_name_part = gm
+build obj/gm/gm.gradient_dirty_laundry.o: cxx ../ext/skia/gm/gradient_dirty_laundry.cpp || obj/gm.inputdeps.stamp
+  source_file_part = gradient_dirty_laundry.cpp
+  source_name_part = gradient_dirty_laundry
+build obj/gm/gm.gradient_matrix.o: cxx ../ext/skia/gm/gradient_matrix.cpp || obj/gm.inputdeps.stamp
+  source_file_part = gradient_matrix.cpp
+  source_name_part = gradient_matrix
+build obj/gm/gm.gradients.o: cxx ../ext/skia/gm/gradients.cpp || obj/gm.inputdeps.stamp
+  source_file_part = gradients.cpp
+  source_name_part = gradients
+build obj/gm/gm.gradients_2pt_conical.o: cxx ../ext/skia/gm/gradients_2pt_conical.cpp || obj/gm.inputdeps.stamp
+  source_file_part = gradients_2pt_conical.cpp
+  source_name_part = gradients_2pt_conical
+build obj/gm/gm.gradients_degenerate.o: cxx ../ext/skia/gm/gradients_degenerate.cpp || obj/gm.inputdeps.stamp
+  source_file_part = gradients_degenerate.cpp
+  source_name_part = gradients_degenerate
+build obj/gm/gm.gradients_no_texture.o: cxx ../ext/skia/gm/gradients_no_texture.cpp || obj/gm.inputdeps.stamp
+  source_file_part = gradients_no_texture.cpp
+  source_name_part = gradients_no_texture
+build obj/gm/gm.gradtext.o: cxx ../ext/skia/gm/gradtext.cpp || obj/gm.inputdeps.stamp
+  source_file_part = gradtext.cpp
+  source_name_part = gradtext
+build obj/gm/gm.graphite_replay.o: cxx ../ext/skia/gm/graphite_replay.cpp || obj/gm.inputdeps.stamp
+  source_file_part = graphite_replay.cpp
+  source_name_part = graphite_replay
+build obj/gm/gm.graphitestart.o: cxx ../ext/skia/gm/graphitestart.cpp || obj/gm.inputdeps.stamp
+  source_file_part = graphitestart.cpp
+  source_name_part = graphitestart
+build obj/gm/gm.grayscalejpg.o: cxx ../ext/skia/gm/grayscalejpg.cpp || obj/gm.inputdeps.stamp
+  source_file_part = grayscalejpg.cpp
+  source_name_part = grayscalejpg
+build obj/gm/gm.hairlines.o: cxx ../ext/skia/gm/hairlines.cpp || obj/gm.inputdeps.stamp
+  source_file_part = hairlines.cpp
+  source_name_part = hairlines
+build obj/gm/gm.hairmodes.o: cxx ../ext/skia/gm/hairmodes.cpp || obj/gm.inputdeps.stamp
+  source_file_part = hairmodes.cpp
+  source_name_part = hairmodes
+build obj/gm/gm.hardstop_gradients.o: cxx ../ext/skia/gm/hardstop_gradients.cpp || obj/gm.inputdeps.stamp
+  source_file_part = hardstop_gradients.cpp
+  source_name_part = hardstop_gradients
+build obj/gm/gm.hardstop_gradients_many.o: cxx ../ext/skia/gm/hardstop_gradients_many.cpp || obj/gm.inputdeps.stamp
+  source_file_part = hardstop_gradients_many.cpp
+  source_name_part = hardstop_gradients_many
+build obj/gm/gm.highcontrastfilter.o: cxx ../ext/skia/gm/highcontrastfilter.cpp || obj/gm.inputdeps.stamp
+  source_file_part = highcontrastfilter.cpp
+  source_name_part = highcontrastfilter
+build obj/gm/gm.hittestpath.o: cxx ../ext/skia/gm/hittestpath.cpp || obj/gm.inputdeps.stamp
+  source_file_part = hittestpath.cpp
+  source_name_part = hittestpath
+build obj/gm/gm.hsl.o: cxx ../ext/skia/gm/hsl.cpp || obj/gm.inputdeps.stamp
+  source_file_part = hsl.cpp
+  source_name_part = hsl
+build obj/gm/gm.hugepath.o: cxx ../ext/skia/gm/hugepath.cpp || obj/gm.inputdeps.stamp
+  source_file_part = hugepath.cpp
+  source_name_part = hugepath
+build obj/gm/gm.image.o: cxx ../ext/skia/gm/image.cpp || obj/gm.inputdeps.stamp
+  source_file_part = image.cpp
+  source_name_part = image
+build obj/gm/gm.image_pict.o: cxx ../ext/skia/gm/image_pict.cpp || obj/gm.inputdeps.stamp
+  source_file_part = image_pict.cpp
+  source_name_part = image_pict
+build obj/gm/gm.image_shader.o: cxx ../ext/skia/gm/image_shader.cpp || obj/gm.inputdeps.stamp
+  source_file_part = image_shader.cpp
+  source_name_part = image_shader
+build obj/gm/gm.imageblur.o: cxx ../ext/skia/gm/imageblur.cpp || obj/gm.inputdeps.stamp
+  source_file_part = imageblur.cpp
+  source_name_part = imageblur
+build obj/gm/gm.imageblur2.o: cxx ../ext/skia/gm/imageblur2.cpp || obj/gm.inputdeps.stamp
+  source_file_part = imageblur2.cpp
+  source_name_part = imageblur2
+build obj/gm/gm.imageblurclampmode.o: cxx ../ext/skia/gm/imageblurclampmode.cpp || obj/gm.inputdeps.stamp
+  source_file_part = imageblurclampmode.cpp
+  source_name_part = imageblurclampmode
+build obj/gm/gm.imageblurrepeatmode.o: cxx ../ext/skia/gm/imageblurrepeatmode.cpp || obj/gm.inputdeps.stamp
+  source_file_part = imageblurrepeatmode.cpp
+  source_name_part = imageblurrepeatmode
+build obj/gm/gm.imageblurtiled.o: cxx ../ext/skia/gm/imageblurtiled.cpp || obj/gm.inputdeps.stamp
+  source_file_part = imageblurtiled.cpp
+  source_name_part = imageblurtiled
+build obj/gm/gm.imagedither.o: cxx ../ext/skia/gm/imagedither.cpp || obj/gm.inputdeps.stamp
+  source_file_part = imagedither.cpp
+  source_name_part = imagedither
+build obj/gm/gm.imagefilters.o: cxx ../ext/skia/gm/imagefilters.cpp || obj/gm.inputdeps.stamp
+  source_file_part = imagefilters.cpp
+  source_name_part = imagefilters
+build obj/gm/gm.imagefiltersbase.o: cxx ../ext/skia/gm/imagefiltersbase.cpp || obj/gm.inputdeps.stamp
+  source_file_part = imagefiltersbase.cpp
+  source_name_part = imagefiltersbase
+build obj/gm/gm.imagefiltersclipped.o: cxx ../ext/skia/gm/imagefiltersclipped.cpp || obj/gm.inputdeps.stamp
+  source_file_part = imagefiltersclipped.cpp
+  source_name_part = imagefiltersclipped
+build obj/gm/gm.imagefilterscropexpand.o: cxx ../ext/skia/gm/imagefilterscropexpand.cpp || obj/gm.inputdeps.stamp
+  source_file_part = imagefilterscropexpand.cpp
+  source_name_part = imagefilterscropexpand
+build obj/gm/gm.imagefilterscropped.o: cxx ../ext/skia/gm/imagefilterscropped.cpp || obj/gm.inputdeps.stamp
+  source_file_part = imagefilterscropped.cpp
+  source_name_part = imagefilterscropped
+build obj/gm/gm.imagefiltersgraph.o: cxx ../ext/skia/gm/imagefiltersgraph.cpp || obj/gm.inputdeps.stamp
+  source_file_part = imagefiltersgraph.cpp
+  source_name_part = imagefiltersgraph
+build obj/gm/gm.imagefiltersscaled.o: cxx ../ext/skia/gm/imagefiltersscaled.cpp || obj/gm.inputdeps.stamp
+  source_file_part = imagefiltersscaled.cpp
+  source_name_part = imagefiltersscaled
+build obj/gm/gm.imagefiltersstroked.o: cxx ../ext/skia/gm/imagefiltersstroked.cpp || obj/gm.inputdeps.stamp
+  source_file_part = imagefiltersstroked.cpp
+  source_name_part = imagefiltersstroked
+build obj/gm/gm.imagefilterstransformed.o: cxx ../ext/skia/gm/imagefilterstransformed.cpp || obj/gm.inputdeps.stamp
+  source_file_part = imagefilterstransformed.cpp
+  source_name_part = imagefilterstransformed
+build obj/gm/gm.imagefiltersunpremul.o: cxx ../ext/skia/gm/imagefiltersunpremul.cpp || obj/gm.inputdeps.stamp
+  source_file_part = imagefiltersunpremul.cpp
+  source_name_part = imagefiltersunpremul
+build obj/gm/gm.imagefromyuvtextures.o: cxx ../ext/skia/gm/imagefromyuvtextures.cpp || obj/gm.inputdeps.stamp
+  source_file_part = imagefromyuvtextures.cpp
+  source_name_part = imagefromyuvtextures
+build obj/gm/gm.imagemagnifier.o: cxx ../ext/skia/gm/imagemagnifier.cpp || obj/gm.inputdeps.stamp
+  source_file_part = imagemagnifier.cpp
+  source_name_part = imagemagnifier
+build obj/gm/gm.imagemakewithfilter.o: cxx ../ext/skia/gm/imagemakewithfilter.cpp || obj/gm.inputdeps.stamp
+  source_file_part = imagemakewithfilter.cpp
+  source_name_part = imagemakewithfilter
+build obj/gm/gm.imagemasksubset.o: cxx ../ext/skia/gm/imagemasksubset.cpp || obj/gm.inputdeps.stamp
+  source_file_part = imagemasksubset.cpp
+  source_name_part = imagemasksubset
+build obj/gm/gm.imageresizetiled.o: cxx ../ext/skia/gm/imageresizetiled.cpp || obj/gm.inputdeps.stamp
+  source_file_part = imageresizetiled.cpp
+  source_name_part = imageresizetiled
+build obj/gm/gm.imagesource.o: cxx ../ext/skia/gm/imagesource.cpp || obj/gm.inputdeps.stamp
+  source_file_part = imagesource.cpp
+  source_name_part = imagesource
+build obj/gm/gm.imagesource2.o: cxx ../ext/skia/gm/imagesource2.cpp || obj/gm.inputdeps.stamp
+  source_file_part = imagesource2.cpp
+  source_name_part = imagesource2
+build obj/gm/gm.internal_links.o: cxx ../ext/skia/gm/internal_links.cpp || obj/gm.inputdeps.stamp
+  source_file_part = internal_links.cpp
+  source_name_part = internal_links
+build obj/gm/gm.inverseclip.o: cxx ../ext/skia/gm/inverseclip.cpp || obj/gm.inputdeps.stamp
+  source_file_part = inverseclip.cpp
+  source_name_part = inverseclip
+build obj/gm/gm.inversepaths.o: cxx ../ext/skia/gm/inversepaths.cpp || obj/gm.inputdeps.stamp
+  source_file_part = inversepaths.cpp
+  source_name_part = inversepaths
+build obj/gm/gm.jpg_color_cube.o: cxx ../ext/skia/gm/jpg_color_cube.cpp || obj/gm.inputdeps.stamp
+  source_file_part = jpg_color_cube.cpp
+  source_name_part = jpg_color_cube
+build obj/gm/gm.kawase_blur_rt.o: cxx ../ext/skia/gm/kawase_blur_rt.cpp || obj/gm.inputdeps.stamp
+  source_file_part = kawase_blur_rt.cpp
+  source_name_part = kawase_blur_rt
+build obj/gm/gm.labyrinth.o: cxx ../ext/skia/gm/labyrinth.cpp || obj/gm.inputdeps.stamp
+  source_file_part = labyrinth.cpp
+  source_name_part = labyrinth
+build obj/gm/gm.largeclippedpath.o: cxx ../ext/skia/gm/largeclippedpath.cpp || obj/gm.inputdeps.stamp
+  source_file_part = largeclippedpath.cpp
+  source_name_part = largeclippedpath
+build obj/gm/gm.largeglyphblur.o: cxx ../ext/skia/gm/largeglyphblur.cpp || obj/gm.inputdeps.stamp
+  source_file_part = largeglyphblur.cpp
+  source_name_part = largeglyphblur
+build obj/gm/gm.lattice.o: cxx ../ext/skia/gm/lattice.cpp || obj/gm.inputdeps.stamp
+  source_file_part = lattice.cpp
+  source_name_part = lattice
+build obj/gm/gm.lcdblendmodes.o: cxx ../ext/skia/gm/lcdblendmodes.cpp || obj/gm.inputdeps.stamp
+  source_file_part = lcdblendmodes.cpp
+  source_name_part = lcdblendmodes
+build obj/gm/gm.lcdoverlap.o: cxx ../ext/skia/gm/lcdoverlap.cpp || obj/gm.inputdeps.stamp
+  source_file_part = lcdoverlap.cpp
+  source_name_part = lcdoverlap
+build obj/gm/gm.lcdtext.o: cxx ../ext/skia/gm/lcdtext.cpp || obj/gm.inputdeps.stamp
+  source_file_part = lcdtext.cpp
+  source_name_part = lcdtext
+build obj/gm/gm.lighting.o: cxx ../ext/skia/gm/lighting.cpp || obj/gm.inputdeps.stamp
+  source_file_part = lighting.cpp
+  source_name_part = lighting
+build obj/gm/gm.linepaths.o: cxx ../ext/skia/gm/linepaths.cpp || obj/gm.inputdeps.stamp
+  source_file_part = linepaths.cpp
+  source_name_part = linepaths
+build obj/gm/gm.localmatriximagefilter.o: cxx ../ext/skia/gm/localmatriximagefilter.cpp || obj/gm.inputdeps.stamp
+  source_file_part = localmatriximagefilter.cpp
+  source_name_part = localmatriximagefilter
+build obj/gm/gm.localmatriximageshader.o: cxx ../ext/skia/gm/localmatriximageshader.cpp || obj/gm.inputdeps.stamp
+  source_file_part = localmatriximageshader.cpp
+  source_name_part = localmatriximageshader
+build obj/gm/gm.localmatrixshader.o: cxx ../ext/skia/gm/localmatrixshader.cpp || obj/gm.inputdeps.stamp
+  source_file_part = localmatrixshader.cpp
+  source_name_part = localmatrixshader
+build obj/gm/gm.lumafilter.o: cxx ../ext/skia/gm/lumafilter.cpp || obj/gm.inputdeps.stamp
+  source_file_part = lumafilter.cpp
+  source_name_part = lumafilter
+build obj/gm/gm.luminosity.o: cxx ../ext/skia/gm/luminosity.cpp || obj/gm.inputdeps.stamp
+  source_file_part = luminosity.cpp
+  source_name_part = luminosity
+build obj/gm/gm.mac_aa_explorer.o: cxx ../ext/skia/gm/mac_aa_explorer.cpp || obj/gm.inputdeps.stamp
+  source_file_part = mac_aa_explorer.cpp
+  source_name_part = mac_aa_explorer
+build obj/gm/gm.make_raster_image.o: cxx ../ext/skia/gm/make_raster_image.cpp || obj/gm.inputdeps.stamp
+  source_file_part = make_raster_image.cpp
+  source_name_part = make_raster_image
+build obj/gm/gm.makecolorspace.o: cxx ../ext/skia/gm/makecolorspace.cpp || obj/gm.inputdeps.stamp
+  source_file_part = makecolorspace.cpp
+  source_name_part = makecolorspace
+build obj/gm/gm.mandoline.o: cxx ../ext/skia/gm/mandoline.cpp || obj/gm.inputdeps.stamp
+  source_file_part = mandoline.cpp
+  source_name_part = mandoline
+build obj/gm/gm.manypathatlases.o: cxx ../ext/skia/gm/manypathatlases.cpp || obj/gm.inputdeps.stamp
+  source_file_part = manypathatlases.cpp
+  source_name_part = manypathatlases
+build obj/gm/gm.manypaths.o: cxx ../ext/skia/gm/manypaths.cpp || obj/gm.inputdeps.stamp
+  source_file_part = manypaths.cpp
+  source_name_part = manypaths
+build obj/gm/gm.matrixconvolution.o: cxx ../ext/skia/gm/matrixconvolution.cpp || obj/gm.inputdeps.stamp
+  source_file_part = matrixconvolution.cpp
+  source_name_part = matrixconvolution
+build obj/gm/gm.matriximagefilter.o: cxx ../ext/skia/gm/matriximagefilter.cpp || obj/gm.inputdeps.stamp
+  source_file_part = matriximagefilter.cpp
+  source_name_part = matriximagefilter
+build obj/gm/gm.mesh.o: cxx ../ext/skia/gm/mesh.cpp || obj/gm.inputdeps.stamp
+  source_file_part = mesh.cpp
+  source_name_part = mesh
+build obj/gm/gm.mipmap.o: cxx ../ext/skia/gm/mipmap.cpp || obj/gm.inputdeps.stamp
+  source_file_part = mipmap.cpp
+  source_name_part = mipmap
+build obj/gm/gm.mirrortile.o: cxx ../ext/skia/gm/mirrortile.cpp || obj/gm.inputdeps.stamp
+  source_file_part = mirrortile.cpp
+  source_name_part = mirrortile
+build obj/gm/gm.mixedtextblobs.o: cxx ../ext/skia/gm/mixedtextblobs.cpp || obj/gm.inputdeps.stamp
+  source_file_part = mixedtextblobs.cpp
+  source_name_part = mixedtextblobs
+build obj/gm/gm.mixercolorfilter.o: cxx ../ext/skia/gm/mixercolorfilter.cpp || obj/gm.inputdeps.stamp
+  source_file_part = mixercolorfilter.cpp
+  source_name_part = mixercolorfilter
+build obj/gm/gm.modecolorfilters.o: cxx ../ext/skia/gm/modecolorfilters.cpp || obj/gm.inputdeps.stamp
+  source_file_part = modecolorfilters.cpp
+  source_name_part = modecolorfilters
+build obj/gm/gm.morphology.o: cxx ../ext/skia/gm/morphology.cpp || obj/gm.inputdeps.stamp
+  source_file_part = morphology.cpp
+  source_name_part = morphology
+build obj/gm/gm.nearesthalfpixelimage.o: cxx ../ext/skia/gm/nearesthalfpixelimage.cpp || obj/gm.inputdeps.stamp
+  source_file_part = nearesthalfpixelimage.cpp
+  source_name_part = nearesthalfpixelimage
+build obj/gm/gm.nested.o: cxx ../ext/skia/gm/nested.cpp || obj/gm.inputdeps.stamp
+  source_file_part = nested.cpp
+  source_name_part = nested
+build obj/gm/gm.ninepatchstretch.o: cxx ../ext/skia/gm/ninepatchstretch.cpp || obj/gm.inputdeps.stamp
+  source_file_part = ninepatchstretch.cpp
+  source_name_part = ninepatchstretch
+build obj/gm/gm.nonclosedpaths.o: cxx ../ext/skia/gm/nonclosedpaths.cpp || obj/gm.inputdeps.stamp
+  source_file_part = nonclosedpaths.cpp
+  source_name_part = nonclosedpaths
+build obj/gm/gm.offsetimagefilter.o: cxx ../ext/skia/gm/offsetimagefilter.cpp || obj/gm.inputdeps.stamp
+  source_file_part = offsetimagefilter.cpp
+  source_name_part = offsetimagefilter
+build obj/gm/gm.orientation.o: cxx ../ext/skia/gm/orientation.cpp || obj/gm.inputdeps.stamp
+  source_file_part = orientation.cpp
+  source_name_part = orientation
+build obj/gm/gm.ovals.o: cxx ../ext/skia/gm/ovals.cpp || obj/gm.inputdeps.stamp
+  source_file_part = ovals.cpp
+  source_name_part = ovals
+build obj/gm/gm.overdrawcanvas.o: cxx ../ext/skia/gm/overdrawcanvas.cpp || obj/gm.inputdeps.stamp
+  source_file_part = overdrawcanvas.cpp
+  source_name_part = overdrawcanvas
+build obj/gm/gm.overdrawcolorfilter.o: cxx ../ext/skia/gm/overdrawcolorfilter.cpp || obj/gm.inputdeps.stamp
+  source_file_part = overdrawcolorfilter.cpp
+  source_name_part = overdrawcolorfilter
+build obj/gm/gm.overstroke.o: cxx ../ext/skia/gm/overstroke.cpp || obj/gm.inputdeps.stamp
+  source_file_part = overstroke.cpp
+  source_name_part = overstroke
+build obj/gm/gm.p3.o: cxx ../ext/skia/gm/p3.cpp || obj/gm.inputdeps.stamp
+  source_file_part = p3.cpp
+  source_name_part = p3
+build obj/gm/gm.palette.o: cxx ../ext/skia/gm/palette.cpp || obj/gm.inputdeps.stamp
+  source_file_part = palette.cpp
+  source_name_part = palette
+build obj/gm/gm.patch.o: cxx ../ext/skia/gm/patch.cpp || obj/gm.inputdeps.stamp
+  source_file_part = patch.cpp
+  source_name_part = patch
+build obj/gm/gm.path_stroke_with_zero_length.o: cxx ../ext/skia/gm/path_stroke_with_zero_length.cpp || obj/gm.inputdeps.stamp
+  source_file_part = path_stroke_with_zero_length.cpp
+  source_name_part = path_stroke_with_zero_length
+build obj/gm/gm.patharcto.o: cxx ../ext/skia/gm/patharcto.cpp || obj/gm.inputdeps.stamp
+  source_file_part = patharcto.cpp
+  source_name_part = patharcto
+build obj/gm/gm.pathcontourstart.o: cxx ../ext/skia/gm/pathcontourstart.cpp || obj/gm.inputdeps.stamp
+  source_file_part = pathcontourstart.cpp
+  source_name_part = pathcontourstart
+build obj/gm/gm.patheffects.o: cxx ../ext/skia/gm/patheffects.cpp || obj/gm.inputdeps.stamp
+  source_file_part = patheffects.cpp
+  source_name_part = patheffects
+build obj/gm/gm.pathfill.o: cxx ../ext/skia/gm/pathfill.cpp || obj/gm.inputdeps.stamp
+  source_file_part = pathfill.cpp
+  source_name_part = pathfill
+build obj/gm/gm.pathinterior.o: cxx ../ext/skia/gm/pathinterior.cpp || obj/gm.inputdeps.stamp
+  source_file_part = pathinterior.cpp
+  source_name_part = pathinterior
+build obj/gm/gm.pathmaskcache.o: cxx ../ext/skia/gm/pathmaskcache.cpp || obj/gm.inputdeps.stamp
+  source_file_part = pathmaskcache.cpp
+  source_name_part = pathmaskcache
+build obj/gm/gm.pathmeasure.o: cxx ../ext/skia/gm/pathmeasure.cpp || obj/gm.inputdeps.stamp
+  source_file_part = pathmeasure.cpp
+  source_name_part = pathmeasure
+build obj/gm/gm.pathopsblend.o: cxx ../ext/skia/gm/pathopsblend.cpp || obj/gm.inputdeps.stamp
+  source_file_part = pathopsblend.cpp
+  source_name_part = pathopsblend
+build obj/gm/gm.pathopsinverse.o: cxx ../ext/skia/gm/pathopsinverse.cpp || obj/gm.inputdeps.stamp
+  source_file_part = pathopsinverse.cpp
+  source_name_part = pathopsinverse
+build obj/gm/gm.pathreverse.o: cxx ../ext/skia/gm/pathreverse.cpp || obj/gm.inputdeps.stamp
+  source_file_part = pathreverse.cpp
+  source_name_part = pathreverse
+build obj/gm/gm.pdf_never_embed.o: cxx ../ext/skia/gm/pdf_never_embed.cpp || obj/gm.inputdeps.stamp
+  source_file_part = pdf_never_embed.cpp
+  source_name_part = pdf_never_embed
+build obj/gm/gm.perlinnoise.o: cxx ../ext/skia/gm/perlinnoise.cpp || obj/gm.inputdeps.stamp
+  source_file_part = perlinnoise.cpp
+  source_name_part = perlinnoise
+build obj/gm/gm.perspimages.o: cxx ../ext/skia/gm/perspimages.cpp || obj/gm.inputdeps.stamp
+  source_file_part = perspimages.cpp
+  source_name_part = perspimages
+build obj/gm/gm.perspshaders.o: cxx ../ext/skia/gm/perspshaders.cpp || obj/gm.inputdeps.stamp
+  source_file_part = perspshaders.cpp
+  source_name_part = perspshaders
+build obj/gm/gm.persptext.o: cxx ../ext/skia/gm/persptext.cpp || obj/gm.inputdeps.stamp
+  source_file_part = persptext.cpp
+  source_name_part = persptext
+build obj/gm/gm.picture.o: cxx ../ext/skia/gm/picture.cpp || obj/gm.inputdeps.stamp
+  source_file_part = picture.cpp
+  source_name_part = picture
+build obj/gm/gm.pictureimagefilter.o: cxx ../ext/skia/gm/pictureimagefilter.cpp || obj/gm.inputdeps.stamp
+  source_file_part = pictureimagefilter.cpp
+  source_name_part = pictureimagefilter
+build obj/gm/gm.pictureimagegenerator.o: cxx ../ext/skia/gm/pictureimagegenerator.cpp || obj/gm.inputdeps.stamp
+  source_file_part = pictureimagegenerator.cpp
+  source_name_part = pictureimagegenerator
+build obj/gm/gm.pictureshader.o: cxx ../ext/skia/gm/pictureshader.cpp || obj/gm.inputdeps.stamp
+  source_file_part = pictureshader.cpp
+  source_name_part = pictureshader
+build obj/gm/gm.pictureshadercache.o: cxx ../ext/skia/gm/pictureshadercache.cpp || obj/gm.inputdeps.stamp
+  source_file_part = pictureshadercache.cpp
+  source_name_part = pictureshadercache
+build obj/gm/gm.pictureshadertile.o: cxx ../ext/skia/gm/pictureshadertile.cpp || obj/gm.inputdeps.stamp
+  source_file_part = pictureshadertile.cpp
+  source_name_part = pictureshadertile
+build obj/gm/gm.plus.o: cxx ../ext/skia/gm/plus.cpp || obj/gm.inputdeps.stamp
+  source_file_part = plus.cpp
+  source_name_part = plus
+build obj/gm/gm.points.o: cxx ../ext/skia/gm/points.cpp || obj/gm.inputdeps.stamp
+  source_file_part = points.cpp
+  source_name_part = points
+build obj/gm/gm.poly2poly.o: cxx ../ext/skia/gm/poly2poly.cpp || obj/gm.inputdeps.stamp
+  source_file_part = poly2poly.cpp
+  source_name_part = poly2poly
+build obj/gm/gm.polygonoffset.o: cxx ../ext/skia/gm/polygonoffset.cpp || obj/gm.inputdeps.stamp
+  source_file_part = polygonoffset.cpp
+  source_name_part = polygonoffset
+build obj/gm/gm.polygons.o: cxx ../ext/skia/gm/polygons.cpp || obj/gm.inputdeps.stamp
+  source_file_part = polygons.cpp
+  source_name_part = polygons
+build obj/gm/gm.postercircle.o: cxx ../ext/skia/gm/postercircle.cpp || obj/gm.inputdeps.stamp
+  source_file_part = postercircle.cpp
+  source_name_part = postercircle
+build obj/gm/gm.preservefillrule.o: cxx ../ext/skia/gm/preservefillrule.cpp || obj/gm.inputdeps.stamp
+  source_file_part = preservefillrule.cpp
+  source_name_part = preservefillrule
+build obj/gm/gm.quadpaths.o: cxx ../ext/skia/gm/quadpaths.cpp || obj/gm.inputdeps.stamp
+  source_file_part = quadpaths.cpp
+  source_name_part = quadpaths
+build obj/gm/gm.radial_gradient_precision.o: cxx ../ext/skia/gm/radial_gradient_precision.cpp || obj/gm.inputdeps.stamp
+  source_file_part = radial_gradient_precision.cpp
+  source_name_part = radial_gradient_precision
+build obj/gm/gm.rasterhandleallocator.o: cxx ../ext/skia/gm/rasterhandleallocator.cpp || obj/gm.inputdeps.stamp
+  source_file_part = rasterhandleallocator.cpp
+  source_name_part = rasterhandleallocator
+build obj/gm/gm.readpixels.o: cxx ../ext/skia/gm/readpixels.cpp || obj/gm.inputdeps.stamp
+  source_file_part = readpixels.cpp
+  source_name_part = readpixels
+build obj/gm/gm.recordopts.o: cxx ../ext/skia/gm/recordopts.cpp || obj/gm.inputdeps.stamp
+  source_file_part = recordopts.cpp
+  source_name_part = recordopts
+build obj/gm/gm.rendertomipmappedyuvimageplanes.o: cxx ../ext/skia/gm/rendertomipmappedyuvimageplanes.cpp || obj/gm.inputdeps.stamp
+  source_file_part = rendertomipmappedyuvimageplanes.cpp
+  source_name_part = rendertomipmappedyuvimageplanes
+build obj/gm/gm.repeated_bitmap.o: cxx ../ext/skia/gm/repeated_bitmap.cpp || obj/gm.inputdeps.stamp
+  source_file_part = repeated_bitmap.cpp
+  source_name_part = repeated_bitmap
+build obj/gm/gm.resizeimagefilter.o: cxx ../ext/skia/gm/resizeimagefilter.cpp || obj/gm.inputdeps.stamp
+  source_file_part = resizeimagefilter.cpp
+  source_name_part = resizeimagefilter
+build obj/gm/gm.rippleshadergm.o: cxx ../ext/skia/gm/rippleshadergm.cpp || obj/gm.inputdeps.stamp
+  source_file_part = rippleshadergm.cpp
+  source_name_part = rippleshadergm
+build obj/gm/gm.roundrects.o: cxx ../ext/skia/gm/roundrects.cpp || obj/gm.inputdeps.stamp
+  source_file_part = roundrects.cpp
+  source_name_part = roundrects
+build obj/gm/gm.rrect.o: cxx ../ext/skia/gm/rrect.cpp || obj/gm.inputdeps.stamp
+  source_file_part = rrect.cpp
+  source_name_part = rrect
+build obj/gm/gm.rrectclipdrawpaint.o: cxx ../ext/skia/gm/rrectclipdrawpaint.cpp || obj/gm.inputdeps.stamp
+  source_file_part = rrectclipdrawpaint.cpp
+  source_name_part = rrectclipdrawpaint
+build obj/gm/gm.rsxtext.o: cxx ../ext/skia/gm/rsxtext.cpp || obj/gm.inputdeps.stamp
+  source_file_part = rsxtext.cpp
+  source_name_part = rsxtext
+build obj/gm/gm.runtimecolorfilter.o: cxx ../ext/skia/gm/runtimecolorfilter.cpp || obj/gm.inputdeps.stamp
+  source_file_part = runtimecolorfilter.cpp
+  source_name_part = runtimecolorfilter
+build obj/gm/gm.runtimefunctions.o: cxx ../ext/skia/gm/runtimefunctions.cpp || obj/gm.inputdeps.stamp
+  source_file_part = runtimefunctions.cpp
+  source_name_part = runtimefunctions
+build obj/gm/gm.runtimeimagefilter.o: cxx ../ext/skia/gm/runtimeimagefilter.cpp || obj/gm.inputdeps.stamp
+  source_file_part = runtimeimagefilter.cpp
+  source_name_part = runtimeimagefilter
+build obj/gm/gm.runtimeintrinsics.o: cxx ../ext/skia/gm/runtimeintrinsics.cpp || obj/gm.inputdeps.stamp
+  source_file_part = runtimeintrinsics.cpp
+  source_name_part = runtimeintrinsics
+build obj/gm/gm.runtimeshader.o: cxx ../ext/skia/gm/runtimeshader.cpp || obj/gm.inputdeps.stamp
+  source_file_part = runtimeshader.cpp
+  source_name_part = runtimeshader
+build obj/gm/gm.samplerstress.o: cxx ../ext/skia/gm/samplerstress.cpp || obj/gm.inputdeps.stamp
+  source_file_part = samplerstress.cpp
+  source_name_part = samplerstress
+build obj/gm/gm.savelayer.o: cxx ../ext/skia/gm/savelayer.cpp || obj/gm.inputdeps.stamp
+  source_file_part = savelayer.cpp
+  source_name_part = savelayer
+build obj/gm/gm.scaledemoji.o: cxx ../ext/skia/gm/scaledemoji.cpp || obj/gm.inputdeps.stamp
+  source_file_part = scaledemoji.cpp
+  source_name_part = scaledemoji
+build obj/gm/gm.scaledemoji_rendering.o: cxx ../ext/skia/gm/scaledemoji_rendering.cpp || obj/gm.inputdeps.stamp
+  source_file_part = scaledemoji_rendering.cpp
+  source_name_part = scaledemoji_rendering
+build obj/gm/gm.scaledrects.o: cxx ../ext/skia/gm/scaledrects.cpp || obj/gm.inputdeps.stamp
+  source_file_part = scaledrects.cpp
+  source_name_part = scaledrects
+build obj/gm/gm.scaledstrokes.o: cxx ../ext/skia/gm/scaledstrokes.cpp || obj/gm.inputdeps.stamp
+  source_file_part = scaledstrokes.cpp
+  source_name_part = scaledstrokes
+build obj/gm/gm.shadermaskfilter.o: cxx ../ext/skia/gm/shadermaskfilter.cpp || obj/gm.inputdeps.stamp
+  source_file_part = shadermaskfilter.cpp
+  source_name_part = shadermaskfilter
+build obj/gm/gm.shaderpath.o: cxx ../ext/skia/gm/shaderpath.cpp || obj/gm.inputdeps.stamp
+  source_file_part = shaderpath.cpp
+  source_name_part = shaderpath
+build obj/gm/gm.shadertext3.o: cxx ../ext/skia/gm/shadertext3.cpp || obj/gm.inputdeps.stamp
+  source_file_part = shadertext3.cpp
+  source_name_part = shadertext3
+build obj/gm/gm.shadowutils.o: cxx ../ext/skia/gm/shadowutils.cpp || obj/gm.inputdeps.stamp
+  source_file_part = shadowutils.cpp
+  source_name_part = shadowutils
+build obj/gm/gm.shallowgradient.o: cxx ../ext/skia/gm/shallowgradient.cpp || obj/gm.inputdeps.stamp
+  source_file_part = shallowgradient.cpp
+  source_name_part = shallowgradient
+build obj/gm/gm.shapes.o: cxx ../ext/skia/gm/shapes.cpp || obj/gm.inputdeps.stamp
+  source_file_part = shapes.cpp
+  source_name_part = shapes
+build obj/gm/gm.sharedcorners.o: cxx ../ext/skia/gm/sharedcorners.cpp || obj/gm.inputdeps.stamp
+  source_file_part = sharedcorners.cpp
+  source_name_part = sharedcorners
+build obj/gm/gm.showmiplevels.o: cxx ../ext/skia/gm/showmiplevels.cpp || obj/gm.inputdeps.stamp
+  source_file_part = showmiplevels.cpp
+  source_name_part = showmiplevels
+build obj/gm/gm.simpleaaclip.o: cxx ../ext/skia/gm/simpleaaclip.cpp || obj/gm.inputdeps.stamp
+  source_file_part = simpleaaclip.cpp
+  source_name_part = simpleaaclip
+build obj/gm/gm.simplerect.o: cxx ../ext/skia/gm/simplerect.cpp || obj/gm.inputdeps.stamp
+  source_file_part = simplerect.cpp
+  source_name_part = simplerect
+build obj/gm/gm.skbug1719.o: cxx ../ext/skia/gm/skbug1719.cpp || obj/gm.inputdeps.stamp
+  source_file_part = skbug1719.cpp
+  source_name_part = skbug1719
+build obj/gm/gm.skbug_12212.o: cxx ../ext/skia/gm/skbug_12212.cpp || obj/gm.inputdeps.stamp
+  source_file_part = skbug_12212.cpp
+  source_name_part = skbug_12212
+build obj/gm/gm.skbug_257.o: cxx ../ext/skia/gm/skbug_257.cpp || obj/gm.inputdeps.stamp
+  source_file_part = skbug_257.cpp
+  source_name_part = skbug_257
+build obj/gm/gm.skbug_4868.o: cxx ../ext/skia/gm/skbug_4868.cpp || obj/gm.inputdeps.stamp
+  source_file_part = skbug_4868.cpp
+  source_name_part = skbug_4868
+build obj/gm/gm.skbug_5321.o: cxx ../ext/skia/gm/skbug_5321.cpp || obj/gm.inputdeps.stamp
+  source_file_part = skbug_5321.cpp
+  source_name_part = skbug_5321
+build obj/gm/gm.skbug_8664.o: cxx ../ext/skia/gm/skbug_8664.cpp || obj/gm.inputdeps.stamp
+  source_file_part = skbug_8664.cpp
+  source_name_part = skbug_8664
+build obj/gm/gm.skbug_8955.o: cxx ../ext/skia/gm/skbug_8955.cpp || obj/gm.inputdeps.stamp
+  source_file_part = skbug_8955.cpp
+  source_name_part = skbug_8955
+build obj/gm/gm.skbug_9319.o: cxx ../ext/skia/gm/skbug_9319.cpp || obj/gm.inputdeps.stamp
+  source_file_part = skbug_9319.cpp
+  source_name_part = skbug_9319
+build obj/gm/gm.skbug_9819.o: cxx ../ext/skia/gm/skbug_9819.cpp || obj/gm.inputdeps.stamp
+  source_file_part = skbug_9819.cpp
+  source_name_part = skbug_9819
+build obj/gm/gm.slug.o: cxx ../ext/skia/gm/slug.cpp || obj/gm.inputdeps.stamp
+  source_file_part = slug.cpp
+  source_name_part = slug
+build obj/gm/gm.smallarc.o: cxx ../ext/skia/gm/smallarc.cpp || obj/gm.inputdeps.stamp
+  source_file_part = smallarc.cpp
+  source_name_part = smallarc
+build obj/gm/gm.smallcircles.o: cxx ../ext/skia/gm/smallcircles.cpp || obj/gm.inputdeps.stamp
+  source_file_part = smallcircles.cpp
+  source_name_part = smallcircles
+build obj/gm/gm.smallpaths.o: cxx ../ext/skia/gm/smallpaths.cpp || obj/gm.inputdeps.stamp
+  source_file_part = smallpaths.cpp
+  source_name_part = smallpaths
+build obj/gm/gm.spritebitmap.o: cxx ../ext/skia/gm/spritebitmap.cpp || obj/gm.inputdeps.stamp
+  source_file_part = spritebitmap.cpp
+  source_name_part = spritebitmap
+build obj/gm/gm.srcmode.o: cxx ../ext/skia/gm/srcmode.cpp || obj/gm.inputdeps.stamp
+  source_file_part = srcmode.cpp
+  source_name_part = srcmode
+build obj/gm/gm.srgb.o: cxx ../ext/skia/gm/srgb.cpp || obj/gm.inputdeps.stamp
+  source_file_part = srgb.cpp
+  source_name_part = srgb
+build obj/gm/gm.stlouisarch.o: cxx ../ext/skia/gm/stlouisarch.cpp || obj/gm.inputdeps.stamp
+  source_file_part = stlouisarch.cpp
+  source_name_part = stlouisarch
+build obj/gm/gm.stringart.o: cxx ../ext/skia/gm/stringart.cpp || obj/gm.inputdeps.stamp
+  source_file_part = stringart.cpp
+  source_name_part = stringart
+build obj/gm/gm.stroke_rect_shader.o: cxx ../ext/skia/gm/stroke_rect_shader.cpp || obj/gm.inputdeps.stamp
+  source_file_part = stroke_rect_shader.cpp
+  source_name_part = stroke_rect_shader
+build obj/gm/gm.strokedlines.o: cxx ../ext/skia/gm/strokedlines.cpp || obj/gm.inputdeps.stamp
+  source_file_part = strokedlines.cpp
+  source_name_part = strokedlines
+build obj/gm/gm.strokefill.o: cxx ../ext/skia/gm/strokefill.cpp || obj/gm.inputdeps.stamp
+  source_file_part = strokefill.cpp
+  source_name_part = strokefill
+build obj/gm/gm.strokerect.o: cxx ../ext/skia/gm/strokerect.cpp || obj/gm.inputdeps.stamp
+  source_file_part = strokerect.cpp
+  source_name_part = strokerect
+build obj/gm/gm.strokerect_anisotropic.o: cxx ../ext/skia/gm/strokerect_anisotropic.cpp || obj/gm.inputdeps.stamp
+  source_file_part = strokerect_anisotropic.cpp
+  source_name_part = strokerect_anisotropic
+build obj/gm/gm.strokerects.o: cxx ../ext/skia/gm/strokerects.cpp || obj/gm.inputdeps.stamp
+  source_file_part = strokerects.cpp
+  source_name_part = strokerects
+build obj/gm/gm.strokes.o: cxx ../ext/skia/gm/strokes.cpp || obj/gm.inputdeps.stamp
+  source_file_part = strokes.cpp
+  source_name_part = strokes
+build obj/gm/gm.stroketext.o: cxx ../ext/skia/gm/stroketext.cpp || obj/gm.inputdeps.stamp
+  source_file_part = stroketext.cpp
+  source_name_part = stroketext
+build obj/gm/gm.subsetshader.o: cxx ../ext/skia/gm/subsetshader.cpp || obj/gm.inputdeps.stamp
+  source_file_part = subsetshader.cpp
+  source_name_part = subsetshader
+build obj/gm/gm.surface.o: cxx ../ext/skia/gm/surface.cpp || obj/gm.inputdeps.stamp
+  source_file_part = surface.cpp
+  source_name_part = surface
+build obj/gm/gm.swizzle.o: cxx ../ext/skia/gm/swizzle.cpp || obj/gm.inputdeps.stamp
+  source_file_part = swizzle.cpp
+  source_name_part = swizzle
+build obj/gm/gm.tablecolorfilter.o: cxx ../ext/skia/gm/tablecolorfilter.cpp || obj/gm.inputdeps.stamp
+  source_file_part = tablecolorfilter.cpp
+  source_name_part = tablecolorfilter
+build obj/gm/gm.tallstretchedbitmaps.o: cxx ../ext/skia/gm/tallstretchedbitmaps.cpp || obj/gm.inputdeps.stamp
+  source_file_part = tallstretchedbitmaps.cpp
+  source_name_part = tallstretchedbitmaps
+build obj/gm/gm.testgradient.o: cxx ../ext/skia/gm/testgradient.cpp || obj/gm.inputdeps.stamp
+  source_file_part = testgradient.cpp
+  source_name_part = testgradient
+build obj/gm/gm.text_scale_skew.o: cxx ../ext/skia/gm/text_scale_skew.cpp || obj/gm.inputdeps.stamp
+  source_file_part = text_scale_skew.cpp
+  source_name_part = text_scale_skew
+build obj/gm/gm.textblob.o: cxx ../ext/skia/gm/textblob.cpp || obj/gm.inputdeps.stamp
+  source_file_part = textblob.cpp
+  source_name_part = textblob
+build obj/gm/gm.textblobblockreordering.o: cxx ../ext/skia/gm/textblobblockreordering.cpp || obj/gm.inputdeps.stamp
+  source_file_part = textblobblockreordering.cpp
+  source_name_part = textblobblockreordering
+build obj/gm/gm.textblobcolortrans.o: cxx ../ext/skia/gm/textblobcolortrans.cpp || obj/gm.inputdeps.stamp
+  source_file_part = textblobcolortrans.cpp
+  source_name_part = textblobcolortrans
+build obj/gm/gm.textblobgeometrychange.o: cxx ../ext/skia/gm/textblobgeometrychange.cpp || obj/gm.inputdeps.stamp
+  source_file_part = textblobgeometrychange.cpp
+  source_name_part = textblobgeometrychange
+build obj/gm/gm.textblobmixedsizes.o: cxx ../ext/skia/gm/textblobmixedsizes.cpp || obj/gm.inputdeps.stamp
+  source_file_part = textblobmixedsizes.cpp
+  source_name_part = textblobmixedsizes
+build obj/gm/gm.textblobrandomfont.o: cxx ../ext/skia/gm/textblobrandomfont.cpp || obj/gm.inputdeps.stamp
+  source_file_part = textblobrandomfont.cpp
+  source_name_part = textblobrandomfont
+build obj/gm/gm.textblobshader.o: cxx ../ext/skia/gm/textblobshader.cpp || obj/gm.inputdeps.stamp
+  source_file_part = textblobshader.cpp
+  source_name_part = textblobshader
+build obj/gm/gm.textblobtransforms.o: cxx ../ext/skia/gm/textblobtransforms.cpp || obj/gm.inputdeps.stamp
+  source_file_part = textblobtransforms.cpp
+  source_name_part = textblobtransforms
+build obj/gm/gm.textblobuseaftergpufree.o: cxx ../ext/skia/gm/textblobuseaftergpufree.cpp || obj/gm.inputdeps.stamp
+  source_file_part = textblobuseaftergpufree.cpp
+  source_name_part = textblobuseaftergpufree
+build obj/gm/gm.texteffects.o: cxx ../ext/skia/gm/texteffects.cpp || obj/gm.inputdeps.stamp
+  source_file_part = texteffects.cpp
+  source_name_part = texteffects
+build obj/gm/gm.thinconcavepaths.o: cxx ../ext/skia/gm/thinconcavepaths.cpp || obj/gm.inputdeps.stamp
+  source_file_part = thinconcavepaths.cpp
+  source_name_part = thinconcavepaths
+build obj/gm/gm.thinrects.o: cxx ../ext/skia/gm/thinrects.cpp || obj/gm.inputdeps.stamp
+  source_file_part = thinrects.cpp
+  source_name_part = thinrects
+build obj/gm/gm.thinstrokedrects.o: cxx ../ext/skia/gm/thinstrokedrects.cpp || obj/gm.inputdeps.stamp
+  source_file_part = thinstrokedrects.cpp
+  source_name_part = thinstrokedrects
+build obj/gm/gm.tiledscaledbitmap.o: cxx ../ext/skia/gm/tiledscaledbitmap.cpp || obj/gm.inputdeps.stamp
+  source_file_part = tiledscaledbitmap.cpp
+  source_name_part = tiledscaledbitmap
+build obj/gm/gm.tileimagefilter.o: cxx ../ext/skia/gm/tileimagefilter.cpp || obj/gm.inputdeps.stamp
+  source_file_part = tileimagefilter.cpp
+  source_name_part = tileimagefilter
+build obj/gm/gm.tilemodes.o: cxx ../ext/skia/gm/tilemodes.cpp || obj/gm.inputdeps.stamp
+  source_file_part = tilemodes.cpp
+  source_name_part = tilemodes
+build obj/gm/gm.tilemodes_alpha.o: cxx ../ext/skia/gm/tilemodes_alpha.cpp || obj/gm.inputdeps.stamp
+  source_file_part = tilemodes_alpha.cpp
+  source_name_part = tilemodes_alpha
+build obj/gm/gm.tilemodes_scaled.o: cxx ../ext/skia/gm/tilemodes_scaled.cpp || obj/gm.inputdeps.stamp
+  source_file_part = tilemodes_scaled.cpp
+  source_name_part = tilemodes_scaled
+build obj/gm/gm.tinybitmap.o: cxx ../ext/skia/gm/tinybitmap.cpp || obj/gm.inputdeps.stamp
+  source_file_part = tinybitmap.cpp
+  source_name_part = tinybitmap
+build obj/gm/gm.transparency.o: cxx ../ext/skia/gm/transparency.cpp || obj/gm.inputdeps.stamp
+  source_file_part = transparency.cpp
+  source_name_part = transparency
+build obj/gm/gm.trickycubicstrokes.o: cxx ../ext/skia/gm/trickycubicstrokes.cpp || obj/gm.inputdeps.stamp
+  source_file_part = trickycubicstrokes.cpp
+  source_name_part = trickycubicstrokes
+build obj/gm/gm.typeface.o: cxx ../ext/skia/gm/typeface.cpp || obj/gm.inputdeps.stamp
+  source_file_part = typeface.cpp
+  source_name_part = typeface
+build obj/gm/gm.unpremul.o: cxx ../ext/skia/gm/unpremul.cpp || obj/gm.inputdeps.stamp
+  source_file_part = unpremul.cpp
+  source_name_part = unpremul
+build obj/gm/gm.userfont.o: cxx ../ext/skia/gm/userfont.cpp || obj/gm.inputdeps.stamp
+  source_file_part = userfont.cpp
+  source_name_part = userfont
+build obj/gm/gm.variedtext.o: cxx ../ext/skia/gm/variedtext.cpp || obj/gm.inputdeps.stamp
+  source_file_part = variedtext.cpp
+  source_name_part = variedtext
+build obj/gm/gm.vertices.o: cxx ../ext/skia/gm/vertices.cpp || obj/gm.inputdeps.stamp
+  source_file_part = vertices.cpp
+  source_name_part = vertices
+build obj/gm/gm.verylargebitmap.o: cxx ../ext/skia/gm/verylargebitmap.cpp || obj/gm.inputdeps.stamp
+  source_file_part = verylargebitmap.cpp
+  source_name_part = verylargebitmap
+build obj/gm/gm.wacky_yuv_formats.o: cxx ../ext/skia/gm/wacky_yuv_formats.cpp || obj/gm.inputdeps.stamp
+  source_file_part = wacky_yuv_formats.cpp
+  source_name_part = wacky_yuv_formats
+build obj/gm/gm.widebuttcaps.o: cxx ../ext/skia/gm/widebuttcaps.cpp || obj/gm.inputdeps.stamp
+  source_file_part = widebuttcaps.cpp
+  source_name_part = widebuttcaps
+build obj/gm/gm.windowrectangles.o: cxx ../ext/skia/gm/windowrectangles.cpp || obj/gm.inputdeps.stamp
+  source_file_part = windowrectangles.cpp
+  source_name_part = windowrectangles
+build obj/gm/gm.workingspace.o: cxx ../ext/skia/gm/workingspace.cpp || obj/gm.inputdeps.stamp
+  source_file_part = workingspace.cpp
+  source_name_part = workingspace
+build obj/gm/gm.xfermodeimagefilter.o: cxx ../ext/skia/gm/xfermodeimagefilter.cpp || obj/gm.inputdeps.stamp
+  source_file_part = xfermodeimagefilter.cpp
+  source_name_part = xfermodeimagefilter
+build obj/gm/gm.xfermodes.o: cxx ../ext/skia/gm/xfermodes.cpp || obj/gm.inputdeps.stamp
+  source_file_part = xfermodes.cpp
+  source_name_part = xfermodes
+build obj/gm/gm.xfermodes2.o: cxx ../ext/skia/gm/xfermodes2.cpp || obj/gm.inputdeps.stamp
+  source_file_part = xfermodes2.cpp
+  source_name_part = xfermodes2
+build obj/gm/gm.xfermodes3.o: cxx ../ext/skia/gm/xfermodes3.cpp || obj/gm.inputdeps.stamp
+  source_file_part = xfermodes3.cpp
+  source_name_part = xfermodes3
+build obj/gm/gm.ycbcrimage.o: cxx ../ext/skia/gm/ycbcrimage.cpp || obj/gm.inputdeps.stamp
+  source_file_part = ycbcrimage.cpp
+  source_name_part = ycbcrimage
+build obj/gm/gm.yuv420_odd_dim.o: cxx ../ext/skia/gm/yuv420_odd_dim.cpp || obj/gm.inputdeps.stamp
+  source_file_part = yuv420_odd_dim.cpp
+  source_name_part = yuv420_odd_dim
+build obj/gm/gm.aarecteffect.o: cxx ../ext/skia/gm/aarecteffect.cpp || obj/gm.inputdeps.stamp
+  source_file_part = aarecteffect.cpp
+  source_name_part = aarecteffect
+build obj/gm/gm.attributes.o: cxx ../ext/skia/gm/attributes.cpp || obj/gm.inputdeps.stamp
+  source_file_part = attributes.cpp
+  source_name_part = attributes
+build obj/gm/gm.beziereffects.o: cxx ../ext/skia/gm/beziereffects.cpp || obj/gm.inputdeps.stamp
+  source_file_part = beziereffects.cpp
+  source_name_part = beziereffects
+build obj/gm/gm.bigrrectaaeffect.o: cxx ../ext/skia/gm/bigrrectaaeffect.cpp || obj/gm.inputdeps.stamp
+  source_file_part = bigrrectaaeffect.cpp
+  source_name_part = bigrrectaaeffect
+build obj/gm/gm.clear_swizzle.o: cxx ../ext/skia/gm/clear_swizzle.cpp || obj/gm.inputdeps.stamp
+  source_file_part = clear_swizzle.cpp
+  source_name_part = clear_swizzle
+build obj/gm/gm.clockwise.o: cxx ../ext/skia/gm/clockwise.cpp || obj/gm.inputdeps.stamp
+  source_file_part = clockwise.cpp
+  source_name_part = clockwise
+build obj/gm/gm.constcolorprocessor.o: cxx ../ext/skia/gm/constcolorprocessor.cpp || obj/gm.inputdeps.stamp
+  source_file_part = constcolorprocessor.cpp
+  source_name_part = constcolorprocessor
+build obj/gm/gm.convexpolyeffect.o: cxx ../ext/skia/gm/convexpolyeffect.cpp || obj/gm.inputdeps.stamp
+  source_file_part = convexpolyeffect.cpp
+  source_name_part = convexpolyeffect
+build obj/gm/gm.destcolor.o: cxx ../ext/skia/gm/destcolor.cpp || obj/gm.inputdeps.stamp
+  source_file_part = destcolor.cpp
+  source_name_part = destcolor
+build obj/gm/gm.drawquadset.o: cxx ../ext/skia/gm/drawquadset.cpp || obj/gm.inputdeps.stamp
+  source_file_part = drawquadset.cpp
+  source_name_part = drawquadset
+build obj/gm/gm.fp_sample_chaining.o: cxx ../ext/skia/gm/fp_sample_chaining.cpp || obj/gm.inputdeps.stamp
+  source_file_part = fp_sample_chaining.cpp
+  source_name_part = fp_sample_chaining
+build obj/gm/gm.fpcoordinateoverride.o: cxx ../ext/skia/gm/fpcoordinateoverride.cpp || obj/gm.inputdeps.stamp
+  source_file_part = fpcoordinateoverride.cpp
+  source_name_part = fpcoordinateoverride
+build obj/gm/gm.fwidth_squircle.o: cxx ../ext/skia/gm/fwidth_squircle.cpp || obj/gm.inputdeps.stamp
+  source_file_part = fwidth_squircle.cpp
+  source_name_part = fwidth_squircle
+build obj/gm/gm.gpu_blur_utils.o: cxx ../ext/skia/gm/gpu_blur_utils.cpp || obj/gm.inputdeps.stamp
+  source_file_part = gpu_blur_utils.cpp
+  source_name_part = gpu_blur_utils
+build obj/gm/gm.lazytiling.o: cxx ../ext/skia/gm/lazytiling.cpp || obj/gm.inputdeps.stamp
+  source_file_part = lazytiling.cpp
+  source_name_part = lazytiling
+build obj/gm/gm.rrects.o: cxx ../ext/skia/gm/rrects.cpp || obj/gm.inputdeps.stamp
+  source_file_part = rrects.cpp
+  source_name_part = rrects
+build obj/gm/gm.texelsubset.o: cxx ../ext/skia/gm/texelsubset.cpp || obj/gm.inputdeps.stamp
+  source_file_part = texelsubset.cpp
+  source_name_part = texelsubset
+build obj/gm/gm.yuvtorgbsubset.o: cxx ../ext/skia/gm/yuvtorgbsubset.cpp || obj/gm.inputdeps.stamp
+  source_file_part = yuvtorgbsubset.cpp
+  source_name_part = yuvtorgbsubset
+build obj/gm/gm.rectangletexture.o: cxx ../ext/skia/gm/rectangletexture.cpp || obj/gm.inputdeps.stamp
+  source_file_part = rectangletexture.cpp
+  source_name_part = rectangletexture
+build obj/gm/gm.fiddle.o: cxx ../ext/skia/gm/fiddle.cpp || obj/gm.inputdeps.stamp
+  source_file_part = fiddle.cpp
+  source_name_part = fiddle
+
+build obj/gm.stamp: stamp obj/gm/gm.3d.o obj/gm/gm.aaa.o obj/gm/gm.aaclip.o obj/gm/gm.aarectmodes.o obj/gm/gm.aaxfermodes.o obj/gm/gm.addarc.o obj/gm/gm.all_bitmap_configs.o obj/gm/gm.alpha_image.o obj/gm/gm.alphagradients.o obj/gm/gm.analytic_gradients.o obj/gm/gm.androidblendmodes.o obj/gm/gm.animated_gif.o obj/gm/gm.animated_image_orientation.o obj/gm/gm.animatedimageblurs.o obj/gm/gm.anisotropic.o obj/gm/gm.annotated_text.o obj/gm/gm.arcofzorro.o obj/gm/gm.arcto.o obj/gm/gm.arithmode.o obj/gm/gm.asyncrescaleandread.o obj/gm/gm.b_119394958.o obj/gm/gm.backdrop.o obj/gm/gm.backdrop_imagefilter_croprect.o obj/gm/gm.badpaint.o obj/gm/gm.batchedconvexpaths.o obj/gm/gm.bc1_transparency.o obj/gm/gm.beziers.o obj/gm/gm.bicubic.o obj/gm/gm.bigblurs.o obj/gm/gm.bigmatrix.o obj/gm/gm.bigrect.o obj/gm/gm.bigtext.o obj/gm/gm.bigtileimagefilter.o obj/gm/gm.bitmapcopy.o obj/gm/gm.bitmapfilters.o obj/gm/gm.bitmapimage.o obj/gm/gm.bitmappremul.o obj/gm/gm.bitmaprect.o obj/gm/gm.bitmaprecttest.o obj/gm/gm.bitmapshader.o obj/gm/gm.bitmaptiled.o obj/gm/gm.bleed.o obj/gm/gm.blend.o obj/gm/gm.blurcircles.o obj/gm/gm.blurcircles2.o obj/gm/gm.blurignorexform.o obj/gm/gm.blurimagevmask.o obj/gm/gm.blurpositioning.o obj/gm/gm.blurquickreject.o obj/gm/gm.blurrect.o obj/gm/gm.blurredclippedcircle.o obj/gm/gm.blurroundrect.o obj/gm/gm.blurs.o obj/gm/gm.blurtextsmallradii.o obj/gm/gm.bmpfilterqualityrepeat.o obj/gm/gm.bug12866.o obj/gm/gm.bug5252.o obj/gm/gm.bug530095.o obj/gm/gm.bug615686.o obj/gm/gm.bug6643.o obj/gm/gm.bug6783.o obj/gm/gm.bug9331.o obj/gm/gm.circle_sizes.o obj/gm/gm.circulararcs.o obj/gm/gm.circularclips.o obj/gm/gm.clip_error.o obj/gm/gm.clip_sierpinski_region.o obj/gm/gm.clip_strokerect.o obj/gm/gm.clipdrawdraw.o obj/gm/gm.clippedbitmapshaders.o obj/gm/gm.clipshader.o obj/gm/gm.collapsepaths.o obj/gm/gm.color4f.o obj/gm/gm.coloremoji.o obj/gm/gm.coloremoji_blendmodes.o obj/gm/gm.colorfilteralpha8.o obj/gm/gm.colorfilterimagefilter.o obj/gm/gm.colorfilters.o obj/gm/gm.colormatrix.o obj/gm/gm.colorspace.o obj/gm/gm.colorwheel.o obj/gm/gm.colrv1.o obj/gm/gm.complexclip.o obj/gm/gm.complexclip2.o obj/gm/gm.complexclip3.o obj/gm/gm.complexclip4.o obj/gm/gm.complexclip_blur_tiled.o obj/gm/gm.composecolorfilter.o obj/gm/gm.composeshader.o obj/gm/gm.compositor_quads.o obj/gm/gm.compressed_textures.o obj/gm/gm.concavepaths.o obj/gm/gm.conicpaths.o obj/gm/gm.convex_all_line_paths.o obj/gm/gm.convexpaths.o obj/gm/gm.convexpolyclip.o obj/gm/gm.coordclampshader.o obj/gm/gm.copy_to_4444.o obj/gm/gm.crbug_1041204.o obj/gm/gm.crbug_1073670.o obj/gm/gm.crbug_1086705.o obj/gm/gm.crbug_1113794.o obj/gm/gm.crbug_1139750.o obj/gm/gm.crbug_1156804.o obj/gm/gm.crbug_1162942.o obj/gm/gm.crbug_1167277.o obj/gm/gm.crbug_1174186.o obj/gm/gm.crbug_1174354.o obj/gm/gm.crbug_1177833.o obj/gm/gm.crbug_1257515.o obj/gm/gm.crbug_1313579.o obj/gm/gm.crbug_224618.o obj/gm/gm.crbug_691386.o obj/gm/gm.crbug_788500.o obj/gm/gm.crbug_847759.o obj/gm/gm.crbug_884166.o obj/gm/gm.crbug_887103.o obj/gm/gm.crbug_892988.o obj/gm/gm.crbug_899512.o obj/gm/gm.crbug_905548.o obj/gm/gm.crbug_908646.o obj/gm/gm.crbug_913349.o obj/gm/gm.crbug_918512.o obj/gm/gm.crbug_938592.o obj/gm/gm.crbug_946965.o obj/gm/gm.crbug_947055.o obj/gm/gm.crbug_996140.o obj/gm/gm.crop_imagefilter.o obj/gm/gm.croppedrects.o obj/gm/gm.crosscontextimage.o obj/gm/gm.cubicpaths.o obj/gm/gm.daa.o obj/gm/gm.dashcircle.o obj/gm/gm.dashcubics.o obj/gm/gm.dashing.o obj/gm/gm.degeneratesegments.o obj/gm/gm.dftext.o obj/gm/gm.dftext_blob_persp.o obj/gm/gm.discard.o obj/gm/gm.displacement.o obj/gm/gm.distantclip.o obj/gm/gm.draw_bitmap_rect_skbug4374.o obj/gm/gm.drawable.o obj/gm/gm.drawatlas.o obj/gm/gm.drawatlascolor.o obj/gm/gm.drawbitmaprect.o obj/gm/gm.drawglyphs.o obj/gm/gm.drawimageset.o obj/gm/gm.drawlines_with_local_matrix.o obj/gm/gm.drawminibitmaprect.o obj/gm/gm.drawregion.o obj/gm/gm.drawregionmodes.o obj/gm/gm.dropshadowimagefilter.o obj/gm/gm.drrect.o obj/gm/gm.drrect_small_inner.o obj/gm/gm.dstreadshuffle.o obj/gm/gm.ducky_yuv_blend.o obj/gm/gm.emboss.o obj/gm/gm.emptypath.o obj/gm/gm.emptyshader.o obj/gm/gm.encode.o obj/gm/gm.encode_alpha_jpeg.o obj/gm/gm.encode_color_types.o obj/gm/gm.encode_platform.o obj/gm/gm.encode_srgb.o obj/gm/gm.exoticformats.o obj/gm/gm.fadefilter.o obj/gm/gm.fatpathfill.o obj/gm/gm.fillrect_gradient.o obj/gm/gm.filltypes.o obj/gm/gm.filltypespersp.o obj/gm/gm.filterbug.o obj/gm/gm.filterfastbounds.o obj/gm/gm.filterindiabox.o obj/gm/gm.flippity.o obj/gm/gm.fontcache.o obj/gm/gm.fontmgr.o obj/gm/gm.fontregen.o obj/gm/gm.fontscaler.o obj/gm/gm.fontscalerdistortable.o obj/gm/gm.gammatext.o obj/gm/gm.getpostextpath.o obj/gm/gm.giantbitmap.o obj/gm/gm.glyph_pos.o obj/gm/gm.gm.o obj/gm/gm.gradient_dirty_laundry.o obj/gm/gm.gradient_matrix.o obj/gm/gm.gradients.o obj/gm/gm.gradients_2pt_conical.o obj/gm/gm.gradients_degenerate.o obj/gm/gm.gradients_no_texture.o obj/gm/gm.gradtext.o obj/gm/gm.graphite_replay.o obj/gm/gm.graphitestart.o obj/gm/gm.grayscalejpg.o obj/gm/gm.hairlines.o obj/gm/gm.hairmodes.o obj/gm/gm.hardstop_gradients.o obj/gm/gm.hardstop_gradients_many.o obj/gm/gm.highcontrastfilter.o obj/gm/gm.hittestpath.o obj/gm/gm.hsl.o obj/gm/gm.hugepath.o obj/gm/gm.image.o obj/gm/gm.image_pict.o obj/gm/gm.image_shader.o obj/gm/gm.imageblur.o obj/gm/gm.imageblur2.o obj/gm/gm.imageblurclampmode.o obj/gm/gm.imageblurrepeatmode.o obj/gm/gm.imageblurtiled.o obj/gm/gm.imagedither.o obj/gm/gm.imagefilters.o obj/gm/gm.imagefiltersbase.o obj/gm/gm.imagefiltersclipped.o obj/gm/gm.imagefilterscropexpand.o obj/gm/gm.imagefilterscropped.o obj/gm/gm.imagefiltersgraph.o obj/gm/gm.imagefiltersscaled.o obj/gm/gm.imagefiltersstroked.o obj/gm/gm.imagefilterstransformed.o obj/gm/gm.imagefiltersunpremul.o obj/gm/gm.imagefromyuvtextures.o obj/gm/gm.imagemagnifier.o obj/gm/gm.imagemakewithfilter.o obj/gm/gm.imagemasksubset.o obj/gm/gm.imageresizetiled.o obj/gm/gm.imagesource.o obj/gm/gm.imagesource2.o obj/gm/gm.internal_links.o obj/gm/gm.inverseclip.o obj/gm/gm.inversepaths.o obj/gm/gm.jpg_color_cube.o obj/gm/gm.kawase_blur_rt.o obj/gm/gm.labyrinth.o obj/gm/gm.largeclippedpath.o obj/gm/gm.largeglyphblur.o obj/gm/gm.lattice.o obj/gm/gm.lcdblendmodes.o obj/gm/gm.lcdoverlap.o obj/gm/gm.lcdtext.o obj/gm/gm.lighting.o obj/gm/gm.linepaths.o obj/gm/gm.localmatriximagefilter.o obj/gm/gm.localmatriximageshader.o obj/gm/gm.localmatrixshader.o obj/gm/gm.lumafilter.o obj/gm/gm.luminosity.o obj/gm/gm.mac_aa_explorer.o obj/gm/gm.make_raster_image.o obj/gm/gm.makecolorspace.o obj/gm/gm.mandoline.o obj/gm/gm.manypathatlases.o obj/gm/gm.manypaths.o obj/gm/gm.matrixconvolution.o obj/gm/gm.matriximagefilter.o obj/gm/gm.mesh.o obj/gm/gm.mipmap.o obj/gm/gm.mirrortile.o obj/gm/gm.mixedtextblobs.o obj/gm/gm.mixercolorfilter.o obj/gm/gm.modecolorfilters.o obj/gm/gm.morphology.o obj/gm/gm.nearesthalfpixelimage.o obj/gm/gm.nested.o obj/gm/gm.ninepatchstretch.o obj/gm/gm.nonclosedpaths.o obj/gm/gm.offsetimagefilter.o obj/gm/gm.orientation.o obj/gm/gm.ovals.o obj/gm/gm.overdrawcanvas.o obj/gm/gm.overdrawcolorfilter.o obj/gm/gm.overstroke.o obj/gm/gm.p3.o obj/gm/gm.palette.o obj/gm/gm.patch.o obj/gm/gm.path_stroke_with_zero_length.o obj/gm/gm.patharcto.o obj/gm/gm.pathcontourstart.o obj/gm/gm.patheffects.o obj/gm/gm.pathfill.o obj/gm/gm.pathinterior.o obj/gm/gm.pathmaskcache.o obj/gm/gm.pathmeasure.o obj/gm/gm.pathopsblend.o obj/gm/gm.pathopsinverse.o obj/gm/gm.pathreverse.o obj/gm/gm.pdf_never_embed.o obj/gm/gm.perlinnoise.o obj/gm/gm.perspimages.o obj/gm/gm.perspshaders.o obj/gm/gm.persptext.o obj/gm/gm.picture.o obj/gm/gm.pictureimagefilter.o obj/gm/gm.pictureimagegenerator.o obj/gm/gm.pictureshader.o obj/gm/gm.pictureshadercache.o obj/gm/gm.pictureshadertile.o obj/gm/gm.plus.o obj/gm/gm.points.o obj/gm/gm.poly2poly.o obj/gm/gm.polygonoffset.o obj/gm/gm.polygons.o obj/gm/gm.postercircle.o obj/gm/gm.preservefillrule.o obj/gm/gm.quadpaths.o obj/gm/gm.radial_gradient_precision.o obj/gm/gm.rasterhandleallocator.o obj/gm/gm.readpixels.o obj/gm/gm.recordopts.o obj/gm/gm.rendertomipmappedyuvimageplanes.o obj/gm/gm.repeated_bitmap.o obj/gm/gm.resizeimagefilter.o obj/gm/gm.rippleshadergm.o obj/gm/gm.roundrects.o obj/gm/gm.rrect.o obj/gm/gm.rrectclipdrawpaint.o obj/gm/gm.rsxtext.o obj/gm/gm.runtimecolorfilter.o obj/gm/gm.runtimefunctions.o obj/gm/gm.runtimeimagefilter.o obj/gm/gm.runtimeintrinsics.o obj/gm/gm.runtimeshader.o obj/gm/gm.samplerstress.o obj/gm/gm.savelayer.o obj/gm/gm.scaledemoji.o obj/gm/gm.scaledemoji_rendering.o obj/gm/gm.scaledrects.o obj/gm/gm.scaledstrokes.o obj/gm/gm.shadermaskfilter.o obj/gm/gm.shaderpath.o obj/gm/gm.shadertext3.o obj/gm/gm.shadowutils.o obj/gm/gm.shallowgradient.o obj/gm/gm.shapes.o obj/gm/gm.sharedcorners.o obj/gm/gm.showmiplevels.o obj/gm/gm.simpleaaclip.o obj/gm/gm.simplerect.o obj/gm/gm.skbug1719.o obj/gm/gm.skbug_12212.o obj/gm/gm.skbug_257.o obj/gm/gm.skbug_4868.o obj/gm/gm.skbug_5321.o obj/gm/gm.skbug_8664.o obj/gm/gm.skbug_8955.o obj/gm/gm.skbug_9319.o obj/gm/gm.skbug_9819.o obj/gm/gm.slug.o obj/gm/gm.smallarc.o obj/gm/gm.smallcircles.o obj/gm/gm.smallpaths.o obj/gm/gm.spritebitmap.o obj/gm/gm.srcmode.o obj/gm/gm.srgb.o obj/gm/gm.stlouisarch.o obj/gm/gm.stringart.o obj/gm/gm.stroke_rect_shader.o obj/gm/gm.strokedlines.o obj/gm/gm.strokefill.o obj/gm/gm.strokerect.o obj/gm/gm.strokerect_anisotropic.o obj/gm/gm.strokerects.o obj/gm/gm.strokes.o obj/gm/gm.stroketext.o obj/gm/gm.subsetshader.o obj/gm/gm.surface.o obj/gm/gm.swizzle.o obj/gm/gm.tablecolorfilter.o obj/gm/gm.tallstretchedbitmaps.o obj/gm/gm.testgradient.o obj/gm/gm.text_scale_skew.o obj/gm/gm.textblob.o obj/gm/gm.textblobblockreordering.o obj/gm/gm.textblobcolortrans.o obj/gm/gm.textblobgeometrychange.o obj/gm/gm.textblobmixedsizes.o obj/gm/gm.textblobrandomfont.o obj/gm/gm.textblobshader.o obj/gm/gm.textblobtransforms.o obj/gm/gm.textblobuseaftergpufree.o obj/gm/gm.texteffects.o obj/gm/gm.thinconcavepaths.o obj/gm/gm.thinrects.o obj/gm/gm.thinstrokedrects.o obj/gm/gm.tiledscaledbitmap.o obj/gm/gm.tileimagefilter.o obj/gm/gm.tilemodes.o obj/gm/gm.tilemodes_alpha.o obj/gm/gm.tilemodes_scaled.o obj/gm/gm.tinybitmap.o obj/gm/gm.transparency.o obj/gm/gm.trickycubicstrokes.o obj/gm/gm.typeface.o obj/gm/gm.unpremul.o obj/gm/gm.userfont.o obj/gm/gm.variedtext.o obj/gm/gm.vertices.o obj/gm/gm.verylargebitmap.o obj/gm/gm.wacky_yuv_formats.o obj/gm/gm.widebuttcaps.o obj/gm/gm.windowrectangles.o obj/gm/gm.workingspace.o obj/gm/gm.xfermodeimagefilter.o obj/gm/gm.xfermodes.o obj/gm/gm.xfermodes2.o obj/gm/gm.xfermodes3.o obj/gm/gm.ycbcrimage.o obj/gm/gm.yuv420_odd_dim.o obj/gm/gm.aarecteffect.o obj/gm/gm.attributes.o obj/gm/gm.beziereffects.o obj/gm/gm.bigrrectaaeffect.o obj/gm/gm.clear_swizzle.o obj/gm/gm.clockwise.o obj/gm/gm.constcolorprocessor.o obj/gm/gm.convexpolyeffect.o obj/gm/gm.destcolor.o obj/gm/gm.drawquadset.o obj/gm/gm.fp_sample_chaining.o obj/gm/gm.fpcoordinateoverride.o obj/gm/gm.fwidth_squircle.o obj/gm/gm.gpu_blur_utils.o obj/gm/gm.lazytiling.o obj/gm/gm.rrects.o obj/gm/gm.texelsubset.o obj/gm/gm.yuvtorgbsubset.o obj/gm/gm.rectangletexture.o obj/gm/gm.fiddle.o || obj/gpu_tool_utils.stamp obj/etc1.stamp obj/flags.stamp ./libskia.a obj/tool_utils.stamp ./libskottie.a obj/modules/skottie/gm.stamp ./libskparagraph.a obj/modules/skparagraph/gm.stamp ./libskresources.a ./libskshaper.a obj/skia.h.stamp obj/load_dynamic_library.stamp ./libsksg.a ./libskunicode_core.a ./libskunicode_icu.a obj/modules/skottie/utils.stamp

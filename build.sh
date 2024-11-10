@@ -4,7 +4,7 @@ cp ./APPBUILD.gn ./ext/skia/BUILD.gn
 
 # Run gn within the skia repository
 cd ./ext/skia
-gn gen ../../out/ --args='
+gn gen ../../test/ --args='
 is_debug=false
 skia_enable_optimize_size=true
 
@@ -26,7 +26,7 @@ skia_compile_modules=true
 
 # Run ninja to output the application
 cd ../..
-ninja -C ./out/ fullapp
+ninja -C ./test/ fullapp
 
 # Reduce application size by removing symbols
-strip ./out/fullapp
+strip ./test/fullapp
