@@ -6,11 +6,13 @@ cp ./APPBUILD.gn ./ext/skia/BUILD.gn
 cd ./ext/skia
 gn gen ../../out/ --args='
 is_debug=false
-is_official_build=false
 skia_enable_optimize_size=true
 
 skia_enable_tools=true
 skia_use_gl=true
+
+skia_enable_svg=false
+
 skia_use_system_libjpeg_turbo=false
 skia_use_system_libpng=false 
 skia_use_system_libwebp=false

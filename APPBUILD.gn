@@ -2590,18 +2590,11 @@ if (skia_enable_tools) {
       libs = []
 
       deps = [
-        ":common_flags_config",
-        ":common_flags_gpu",
-        ":common_flags_graphite",
-        ":flags",
         ":gm",
         ":gpu_tool_utils",
         ":sk_app",
         ":skia",
         ":tool_utils",
-        "modules/skshaper:skshaper",
-        "modules/skunicode",
-        "modules/svg",
         "//third_party/imgui",
       ]
       if (skia_use_vulkan) {
