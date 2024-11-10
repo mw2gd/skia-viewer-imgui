@@ -56,6 +56,12 @@ if(APPLE)
     else()
         include(cmake/macos.cmake)
     endif()
+elseif(WIN32)
+    include(cmake/win32.cmake)
+elseif(LINUX)
+    include(cmake/linux.cmake)
+elseif(LINUX)
+    include(cmake/linux.cmake)
 endif()
 
 #======== Link Libraries And External Object Files ========
