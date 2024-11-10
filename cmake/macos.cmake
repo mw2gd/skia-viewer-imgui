@@ -1,5 +1,5 @@
 # Everything in this file is copied from the skia ninja files
-# of the 'Viewer' sample application. Do not modify unless 
+# of the 'viewer' sample application. Do not modify unless 
 # there is need for optimizing output size
 
 add_definitions(
