@@ -78,7 +78,7 @@ void FullApp::onPaint(SkSurface* surface) {
         paint.setShader(nullptr);
     }
 
-    ImGui::ShowDemoWindow(&fShowImGuiTestWindow);
+    //ImGui::ShowDemoWindow(&fShowImGuiTestWindow);
 }
 
 void FullApp::onIdle() {

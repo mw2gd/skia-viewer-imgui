@@ -53,6 +53,7 @@ CTestTestfile.cmake
 Makefile
 
 # Build directories (common names)
+out/
 build/
 Build/
 Debug/
