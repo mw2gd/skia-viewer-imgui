@@ -1,5 +1,5 @@
 # This is a modified version of skia's BUILD.gn.
-# An additonal target has been added, called "fullapp" (L3043)
+# An additonal target has been added, called "fullapp" (L2579)
 # gn cannot be run outside of the skia directory
 # See 'build.sh' for running
 
