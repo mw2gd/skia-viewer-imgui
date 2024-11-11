@@ -1,28 +1,29 @@
-# Replace the build file within the skia repository with 
-# custom build
-cp ./APPBUILD.gn ./ext/skia/BUILD.gn
-
-# Run gn within the skia repository
+# Move into skia directory (gn only works inside skia directory)
 cd ./ext/skia
-gn gen ../../out/ --args='
+
+# Produce libska.a (offical build omits test libraries (i.e., libimgui.a))
+# gn gen out/SKIA --args='
+# is_debug=false
+# is_official_build=true
+# skia_enable_optimize_size=true
+# skia_use_system_libjpeg_turbo=false
+# skia_use_libpng_encode=false
+# skia_use_libpng_decode=false
+# skia_use_system_libwebp=false
+# skia_use_system_zlib=false
+# skia_use_system_icu=false
+# skia_use_system_harfbuzz=false
+# skia_use_system_expat=false
+# '
+# ninja -C out/SKIA skia
+
+# Produce libimgui.a
+cd ./third_party/imgui
+gn gen ../../out/TOOLS --args='
 is_debug=false
 is_official_build=false
 skia_enable_optimize_size=true
-
-skia_use_gl=true
-skia_enable_svg=false
-skia_use_system_libjpeg_turbo=false
-skia_use_system_libpng=false 
-skia_use_system_libwebp=false
-skia_use_system_zlib=false
-skia_use_system_icu=false
-skia_use_system_harfbuzz=false
-skia_use_system_expat=false
 '
+ninja -C ../../out/TOOLS imgui
+ninja -C ../../out/TOOLS sk_app
 
-# Run ninja to output the application
-cd ../..
-ninja -C ./out/ fullapp
-
-# Reduce application size by removing symbols
-strip ./out/fullapp
