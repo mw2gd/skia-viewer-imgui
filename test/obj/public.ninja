@@ -1,8 +1,0 @@
-defines = -DNDEBUG -DSK_TRIVIAL_ABI=\[\[clang$:$:trivial_abi\]\] -DSK_CODEC_DECODES_BMP -DSK_CODEC_DECODES_WBMP -DSK_ENABLE_OPTIMIZE_SIZE -DSK_ENABLE_PRECOMPILE -DSK_ASSUME_GL=1 -DSK_GANESH -DSK_USE_PERFETTO -DSK_ENABLE_API_AVAILABLE
-framework_dirs =
-include_dirs = -I../ext/skia/client_utils/android -I../ext/skia/include/android -I../ext/skia/include/codec -I../ext/skia/include/config -I../ext/skia/include/core -I../ext/skia/include/docs -I../ext/skia/include/effects -I../ext/skia/include/encode -I../ext/skia/include/gpu -I../ext/skia/include/pathops -I../ext/skia/include/ports -I../ext/skia/include/svg -I../ext/skia/include/utils -I../ext/skia/include/utils/mac -I../ext/skia/modules/skottie/include -I../ext/skia/modules/skparagraph/include -I../ext/skia/modules/skshaper/include -I../ext/skia/modules/svg/include -I../ext/skia
-root_out_dir = .
-target_output_name = public
-
-
-build obj/public.stamp: stamp
