@@ -2501,19 +2501,19 @@ if (skia_enable_tools) {
     }
   }
 
-  test_lib("sk_app") {
-    public_deps = [
-      ":gpu_tool_utils",
-      ":skia",
-    ]
+  #######################################################
+  # Customized Target
+  #######################################################
+  skia_static_library("sk_app") {
+    testonly = true
     sources = [
       "tools/sk_app/Application.h",
       "tools/sk_app/CommandSet.cpp",
       "tools/sk_app/CommandSet.h",
-      "tools/sk_app/Window.cpp",
       "tools/sk_app/Window.h",
+      "tools/sk_app/Window.cpp",
     ]
-    libs = []
+    libs = ["./out/skia/libskia.a",]
     frameworks = []
 
     if (is_android) {
@@ -2573,36 +2573,16 @@ if (skia_enable_tools) {
     if (skia_use_gl && skia_use_angle) {
       deps += [ "//third_party/angle2" ]
     }
-  }
+    if (skia_use_vulkan) {
+      deps += [
+        "//third_party/externals/spirv-tools:spvtools",
 
-  #######################################################
-  # Custom Application Target
-  #######################################################
-  if (skia_use_gl) {
-    test_app("fullapp") {
-      is_shared_library = is_android
-      sources = [
-        "tools/viewer/ImGuiLayer.cpp",
-        "tools/viewer/ImGuiLayer.h",
-        "../../src/fullapp.cpp",
-        "../../src/fullapp.h",
+        #spvtools depends on this but doesn't deps it in.
+        "//third_party/externals/spirv-tools:spvtools_val",
       ]
-      libs = []
-
-      deps = [
-        ":sk_app",
-        ":skia",
-        "//third_party/imgui",
-      ]
-      if (skia_use_vulkan) {
-        deps += [
-          "//third_party/externals/spirv-tools:spvtools",
-
-          #spvtools depends on this but doesn't deps it in.
-          "//third_party/externals/spirv-tools:spvtools_val",
-        ]
-      }
     }
   }
+  #######################################################
+  # End
   #######################################################
 }

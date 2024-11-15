@@ -26,7 +26,11 @@ if(GIT_FOUND AND EXISTS "${PROJECT_SOURCE_DIR}/.git")
 endif()
 
 #======== VERIFY FILES DOWNLOADED ========
-if(NOT EXISTS "${PROJECT_SOURCE_DIR}/ext/skia/")
+if(NOT EXISTS "${PROJECT_SOURCE_DIR}/ext/skia/BUILD.gn")
+	message(FATAL_ERROR "The bx submodules was not downloaded! GIT_SUBMODULE was turned off or failed. Please update submodules and try again.")
+endif()
+
+if(NOT EXISTS "${PROJECT_SOURCE_DIR}/ext/imgui/imgui.h")
 	message(FATAL_ERROR "The bx submodules was not downloaded! GIT_SUBMODULE was turned off or failed. Please update submodules and try again.")
 endif()
 
@@ -59,13 +63,24 @@ set(PLATLIBS ${PLATLIBS}
     "-framework Cocoa"
 )
 
+#======== Create External Libraries (if needed) ========
+add_library(libimgui STATIC
+    ${CMAKE_CURRENT_SOURCE_DIR}/ext/imgui/imgui.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/ext/imgui/imgui_draw.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/ext/imgui/imgui_tables.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/ext/imgui/imgui_widgets.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/ext/imgui/misc/cpp/imgui_stdlib.cpp
+)
+target_include_directories(libimgui PUBLIC
+${CMAKE_CURRENT_SOURCE_DIR}/ext/skia/third_party/externals/imgui
+)
+
 #======== Link Libraries ========
 target_link_libraries(app PRIVATE
-    ${CMAKE_CURRENT_SOURCE_DIR}/ext/skia/out/SKIA/libskia.a
-    ${CMAKE_CURRENT_SOURCE_DIR}/ext/skia/out/TOOLS/libimgui.a
-    ${CMAKE_CURRENT_SOURCE_DIR}/ext/skia/out/TOOLS/obj/tools/sk_app/sk_app.CommandSet.o
-    ${CMAKE_CURRENT_SOURCE_DIR}/ext/skia/out/TOOLS/obj/tools/sk_app/sk_app.Window.o
-    ${CMAKE_CURRENT_SOURCE_DIR}/ext/skia/out/TOOLS/obj/tools/sk_app/mac/sk_app.main_mac.o
-    ${CMAKE_CURRENT_SOURCE_DIR}/ext/skia/out/TOOLS/obj/tools/sk_app/mac/sk_app.Window_mac.o
-    ${PLATLIBS}
+    ${CMAKE_CURRENT_SOURCE_DIR}/ext/skia/out/skia/libskia.a
+    libimgui
+    ${CMAKE_CURRENT_SOURCE_DIR}/ext/skia/out/sk_app/obj/tools/sk_app/sk_app.CommandSet.o
+    ${CMAKE_CURRENT_SOURCE_DIR}/ext/skia/out/sk_app/obj/tools/sk_app/sk_app.Window.o
+    ${CMAKE_CURRENT_SOURCE_DIR}/ext/skia/out/sk_app/obj/tools/sk_app/mac/sk_app.main_mac.o
+    ${CMAKE_CURRENT_SOURCE_DIR}/ext/skia/out/sk_app/obj/tools/sk_app/mac/sk_app.Window_mac.o
 )
