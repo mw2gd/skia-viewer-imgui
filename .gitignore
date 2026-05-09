@@ -1,0 +1,90 @@
+# Prerequisites
+*.d
+*.dep
+*.mod
+*.cmd
+
+# Ignore vcpkg directories
+/vcpkg/
+**/vcpkg/
+
+# Ignore vcpkg installed packages
+/vcpkg_installed/
+**/vcpkg_installed/
+
+# Compiled Object files
+*.o
+*.obj
+*.lo
+*.slo
+
+# Compiled Dynamic libraries
+*.dll
+*.so
+*.dylib
+
+# Compiled Static libraries
+*.a
+*.lib
+*.lai
+
+# Executable files
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+# Debug files
+*.elf
+*.map
+*.exp
+*.pdb
+*.idb
+*.DSYM/
+*.dSYM
+
+# CMake generated files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+CTestTestfile.cmake
+Makefile
+
+# Build directories (common names)
+.deps/
+out/
+build/
+Build/
+Debug/
+Release/
+x64/
+x86/
+
+# Visual Studio Code settings directory
+.vscode/
+
+# Logs
+*.log
+
+# Temporary or backup files
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*.swn
+
+# Editor directories and files
+.idea/
+*.code-workspace
+
+# System files
+.DS_Store
+Thumbs.db
+
+#google
+.gclient
+.gclient_entries
+.gclient_previous_sync_commits

@@ -1,0 +1,9 @@
+[submodule "ext/skia"]
+	path = ext/skia
+	url = https://skia.googlesource.com/skia
+[submodule "ext/SDL"]
+	path = ext/SDL
+	url = https://github.com/libsdl-org/SDL.git
+[submodule "ext/imgui"]
+	path = ext/imgui
+	url = https://github.com/ocornut/imgui.git
